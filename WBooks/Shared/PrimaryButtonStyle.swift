@@ -13,12 +13,14 @@ struct PrimaryButtonStyle: ButtonStyle {
         static let horizontalPadding: CGFloat = 20
         static let verticalPadding: CGFloat = 12
         static let lineWidth: CGFloat = 2
+        static let regularColor: Color = Color.white
+        static let highlightColor: Color = Color(white: 0.96)
     }
     
     func makeBody(configuration: Configuration) -> some View {
         configuration.label
             .textCase(.uppercase)
-            .foregroundColor(.white)
+            .foregroundColor(configuration.isPressed ? Constants.highlightColor : Constants.regularColor)
             .padding(
                 EdgeInsets(top: Constants.verticalPadding,
                            leading: Constants.horizontalPadding,
@@ -27,7 +29,7 @@ struct PrimaryButtonStyle: ButtonStyle {
             )
             .overlay(
                 Capsule()
-                    .stroke(Color.white,
+                    .stroke(configuration.isPressed ? Constants.highlightColor : Constants.regularColor,
                             style: StrokeStyle(lineWidth: Constants.lineWidth))
             )
     }

@@ -6,5 +6,10 @@
   
 */
 
+// LoginView
 "LoginView.buttonTitle" = "Login with Google";
 "LoginView.bottomText" = "Designed and developed by woloxers";
+
+// MainView
+"MainView.tabItem.library" = "Library";
+"MainView.tabItem.addNew" = "Add New";

@@ -1,5 +1,5 @@
 //
-//  LibraryView.swift
+//  AddNewView.swift
 //  WBooks
 //
 //  Created by Gabriel Mazzei on 06/05/2021.
@@ -7,14 +7,14 @@
 
 import SwiftUI
 
-struct LibraryView: View {
+struct AddNewView: View {
     var body: some View {
-        Text("Library View")
+        Text("Add New View")
     }
 }
 
-struct LibraryView_Previews: PreviewProvider {
+struct AddNewView_Previews: PreviewProvider {
     static var previews: some View {
-        LibraryView()
+        AddNewView()
     }
 }

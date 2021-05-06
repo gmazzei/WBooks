@@ -1,5 +1,5 @@
 //
-//  PrimaryButtonStyleTests.swift
+//  MainViewTests.swift
 //  WBooksTests
 //
 //  Created by Gabriel Mazzei on 06/05/2021.
@@ -10,25 +10,16 @@ import XCTest
 import SnapshotTesting
 import SwiftUI
 
-final class PrimaryButtonStyleTests: XCTestCase {
+final class MainViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
         isRecording = false
     }
     
-    func testButtonStyle() {
-        let view = VStack {
-            Button("Example", action: {
-                // No-op
-            })
-            .buttonStyle(PrimaryButtonStyle())
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.blue)
-        
+    func testMainView() {
+        let view = MainView()
         let controller = UIHostingController(rootView: view)
-        
         assertSnapshot(matching: controller, as: .image(on: .iPhone8))
     }
     

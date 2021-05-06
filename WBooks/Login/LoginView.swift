@@ -15,6 +15,8 @@ struct LoginView: View {
         static let stackSpacing: CGFloat = 40
     }
     
+    @State private var showMainView: Bool = false
+    
     var body: some View {
         ZStack {
             VStack {
@@ -27,10 +29,10 @@ struct LoginView: View {
                         .frame(width: Constants.imageWidth)
                     
                     Button("LoginView.buttonTitle") {
-                        print("Log in!")
+                        showMainView.toggle()
                     }
                     .buttonStyle(PrimaryButtonStyle())
-                    
+                    .fullScreenCover(isPresented: $showMainView, content: MainView.init)
                 }
                 
                 Spacer()

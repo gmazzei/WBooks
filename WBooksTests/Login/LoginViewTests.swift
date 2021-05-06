@@ -19,9 +19,8 @@ final class LoginViewTests: XCTestCase {
     
     func testLoginView() {
         let view = LoginView()
-        let referenceFrame = view.frame(width: DeviceConstants.screenSize.width, height: DeviceConstants.screenSize.height)
-        
-        assertSnapshot(matching: referenceFrame, as: .image)
+        let controller = UIHostingController(rootView: view)
+        assertSnapshot(matching: controller, as: .image(on: .iPhone8))
     }
     
 }

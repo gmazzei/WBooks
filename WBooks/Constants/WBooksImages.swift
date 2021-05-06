@@ -17,4 +17,12 @@ struct WBooksImages {
     static var wbooksImage: Image {
         return Image("wbooks_image")
     }
+    
+    static var library: Image {
+        return Image("library")
+    }
+    
+    static var addNew: Image {
+        return Image("add_new")
+    }
 }

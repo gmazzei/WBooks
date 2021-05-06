@@ -1,0 +1,808 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 51;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		635533C458EA5B00F976CC2D /* Pods_WBooksTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3A820CE10795AE6631986FD0 /* Pods_WBooksTests.framework */; };
+		65A8F34026446CF300FDD84B /* WBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8F33F26446CF300FDD84B /* WBooksUITests.swift */; };
+		65CBBE2D26445776007E6B72 /* DeviceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBBE2C26445776007E6B72 /* DeviceConstants.swift */; };
+		65D692F4264467EF00223F0E /* PrimaryButtonStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D692F3264467EF00223F0E /* PrimaryButtonStyleTests.swift */; };
+		65F777902644319C0015A334 /* WBooksApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F7778F2644319C0015A334 /* WBooksApp.swift */; };
+		65F77794264431A10015A334 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65F77793264431A10015A334 /* Assets.xcassets */; };
+		65F77797264431A10015A334 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 65F77796264431A10015A334 /* Preview Assets.xcassets */; };
+		65F777BC264432510015A334 /* WBooksImages.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F777BB264432510015A334 /* WBooksImages.swift */; };
+		65F777BF2644360E0015A334 /* LoginView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F777BE2644360E0015A334 /* LoginView.swift */; };
+		65F777C226443AB60015A334 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 65F777C426443AB60015A334 /* Localizable.strings */; };
+		65F777C82644458D0015A334 /* LibraryView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F777C72644458D0015A334 /* LibraryView.swift */; };
+		65F777CB2644501D0015A334 /* PrimaryButtonStyle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F777CA2644501D0015A334 /* PrimaryButtonStyle.swift */; };
+		65F777D0264450D10015A334 /* LoginViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65F777CF264450D10015A334 /* LoginViewTests.swift */; };
+		CB8F8FF96D4ECB53C643F60B /* Pods_WBooks.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = AFEF365A3D1C98D64AB34CCB /* Pods_WBooks.framework */; };
+		D4D10BC9115BE65D46B268B3 /* Pods_WBooks_WBooksUITests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1A560BCCEDD899BA0076F5D4 /* Pods_WBooks_WBooksUITests.framework */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		65F7779E264431A20015A334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65F777842644319C0015A334 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65F7778B2644319C0015A334;
+			remoteInfo = WBooks;
+		};
+		65F777A9264431A20015A334 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 65F777842644319C0015A334 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 65F7778B2644319C0015A334;
+			remoteInfo = WBooks;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0F663804663E23E762DC2339 /* Pods-WBooks-WBooksUITests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBooks-WBooksUITests.release.xcconfig"; path = "Target Support Files/Pods-WBooks-WBooksUITests/Pods-WBooks-WBooksUITests.release.xcconfig"; sourceTree = "<group>"; };
+		12896699BCA47B0A24C25CB0 /* Pods-WBooksTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBooksTests.debug.xcconfig"; path = "Target Support Files/Pods-WBooksTests/Pods-WBooksTests.debug.xcconfig"; sourceTree = "<group>"; };
+		1A560BCCEDD899BA0076F5D4 /* Pods_WBooks_WBooksUITests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WBooks_WBooksUITests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		221D202D0461941A1FCE2821 /* Pods-WBooksTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBooksTests.release.xcconfig"; path = "Target Support Files/Pods-WBooksTests/Pods-WBooksTests.release.xcconfig"; sourceTree = "<group>"; };
+		3A820CE10795AE6631986FD0 /* Pods_WBooksTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WBooksTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B1814037BBCFF41D6B7CFCB /* Pods-WBooks.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBooks.debug.xcconfig"; path = "Target Support Files/Pods-WBooks/Pods-WBooks.debug.xcconfig"; sourceTree = "<group>"; };
+		65A8F33F26446CF300FDD84B /* WBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBooksUITests.swift; sourceTree = "<group>"; };
+		65CBBE2C26445776007E6B72 /* DeviceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConstants.swift; sourceTree = "<group>"; };
+		65D692F3264467EF00223F0E /* PrimaryButtonStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyleTests.swift; sourceTree = "<group>"; };
+		65F7778C2644319C0015A334 /* WBooks.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = WBooks.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F7778F2644319C0015A334 /* WBooksApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBooksApp.swift; sourceTree = "<group>"; };
+		65F77793264431A10015A334 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		65F77796264431A10015A334 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
+		65F77798264431A10015A334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F7779D264431A20015A334 /* WBooksTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBooksTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F777A3264431A20015A334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F777A8264431A20015A334 /* WBooksUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = WBooksUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		65F777AE264431A20015A334 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		65F777BB264432510015A334 /* WBooksImages.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBooksImages.swift; sourceTree = "<group>"; };
+		65F777BE2644360E0015A334 /* LoginView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginView.swift; sourceTree = "<group>"; };
+		65F777C326443AB60015A334 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
+		65F777C72644458D0015A334 /* LibraryView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryView.swift; sourceTree = "<group>"; };
+		65F777CA2644501D0015A334 /* PrimaryButtonStyle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyle.swift; sourceTree = "<group>"; };
+		65F777CF264450D10015A334 /* LoginViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewTests.swift; sourceTree = "<group>"; };
+		A14C8F86086D2A933F2CA51A /* Pods-WBooks.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBooks.release.xcconfig"; path = "Target Support Files/Pods-WBooks/Pods-WBooks.release.xcconfig"; sourceTree = "<group>"; };
+		AFEF365A3D1C98D64AB34CCB /* Pods_WBooks.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_WBooks.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		C87D2E29BF297415501582DB /* Pods-WBooks-WBooksUITests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-WBooks-WBooksUITests.debug.xcconfig"; path = "Target Support Files/Pods-WBooks-WBooksUITests/Pods-WBooks-WBooksUITests.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		65F777892644319C0015A334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CB8F8FF96D4ECB53C643F60B /* Pods_WBooks.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F7779A264431A20015A334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				635533C458EA5B00F976CC2D /* Pods_WBooksTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F777A5264431A20015A334 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D4D10BC9115BE65D46B268B3 /* Pods_WBooks_WBooksUITests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		120D27A7AF38EC482320440D /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				3B1814037BBCFF41D6B7CFCB /* Pods-WBooks.debug.xcconfig */,
+				A14C8F86086D2A933F2CA51A /* Pods-WBooks.release.xcconfig */,
+				C87D2E29BF297415501582DB /* Pods-WBooks-WBooksUITests.debug.xcconfig */,
+				0F663804663E23E762DC2339 /* Pods-WBooks-WBooksUITests.release.xcconfig */,
+				12896699BCA47B0A24C25CB0 /* Pods-WBooksTests.debug.xcconfig */,
+				221D202D0461941A1FCE2821 /* Pods-WBooksTests.release.xcconfig */,
+			);
+			path = Pods;
+			sourceTree = "<group>";
+		};
+		65D692F2264467D400223F0E /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				65D692F3264467EF00223F0E /* PrimaryButtonStyleTests.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		65F777832644319C0015A334 = {
+			isa = PBXGroup;
+			children = (
+				65F7778E2644319C0015A334 /* WBooks */,
+				65F777A0264431A20015A334 /* WBooksTests */,
+				65F777AB264431A20015A334 /* WBooksUITests */,
+				65F7778D2644319C0015A334 /* Products */,
+				120D27A7AF38EC482320440D /* Pods */,
+				C545CD64BAD10DD0E837D8CA /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		65F7778D2644319C0015A334 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				65F7778C2644319C0015A334 /* WBooks.app */,
+				65F7779D264431A20015A334 /* WBooksTests.xctest */,
+				65F777A8264431A20015A334 /* WBooksUITests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		65F7778E2644319C0015A334 /* WBooks */ = {
+			isa = PBXGroup;
+			children = (
+				65F777C9264450080015A334 /* Shared */,
+				65F777C6264445710015A334 /* Library */,
+				65F777BD264432AD0015A334 /* Login */,
+				65F777BA2644323F0015A334 /* Constants */,
+				65F7778F2644319C0015A334 /* WBooksApp.swift */,
+				65F77793264431A10015A334 /* Assets.xcassets */,
+				65F77798264431A10015A334 /* Info.plist */,
+				65F77795264431A10015A334 /* Preview Content */,
+				65F777C426443AB60015A334 /* Localizable.strings */,
+			);
+			path = WBooks;
+			sourceTree = "<group>";
+		};
+		65F77795264431A10015A334 /* Preview Content */ = {
+			isa = PBXGroup;
+			children = (
+				65F77796264431A10015A334 /* Preview Assets.xcassets */,
+			);
+			path = "Preview Content";
+			sourceTree = "<group>";
+		};
+		65F777A0264431A20015A334 /* WBooksTests */ = {
+			isa = PBXGroup;
+			children = (
+				65D692F2264467D400223F0E /* Shared */,
+				65F777CE264450A60015A334 /* Login */,
+				65F777A3264431A20015A334 /* Info.plist */,
+				65CBBE2C26445776007E6B72 /* DeviceConstants.swift */,
+			);
+			path = WBooksTests;
+			sourceTree = "<group>";
+		};
+		65F777AB264431A20015A334 /* WBooksUITests */ = {
+			isa = PBXGroup;
+			children = (
+				65F777AE264431A20015A334 /* Info.plist */,
+				65A8F33F26446CF300FDD84B /* WBooksUITests.swift */,
+			);
+			path = WBooksUITests;
+			sourceTree = "<group>";
+		};
+		65F777BA2644323F0015A334 /* Constants */ = {
+			isa = PBXGroup;
+			children = (
+				65F777BB264432510015A334 /* WBooksImages.swift */,
+			);
+			path = Constants;
+			sourceTree = "<group>";
+		};
+		65F777BD264432AD0015A334 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				65F777BE2644360E0015A334 /* LoginView.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		65F777C6264445710015A334 /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				65F777C72644458D0015A334 /* LibraryView.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		65F777C9264450080015A334 /* Shared */ = {
+			isa = PBXGroup;
+			children = (
+				65F777CA2644501D0015A334 /* PrimaryButtonStyle.swift */,
+			);
+			path = Shared;
+			sourceTree = "<group>";
+		};
+		65F777CE264450A60015A334 /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				65F777CF264450D10015A334 /* LoginViewTests.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
+		C545CD64BAD10DD0E837D8CA /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				AFEF365A3D1C98D64AB34CCB /* Pods_WBooks.framework */,
+				1A560BCCEDD899BA0076F5D4 /* Pods_WBooks_WBooksUITests.framework */,
+				3A820CE10795AE6631986FD0 /* Pods_WBooksTests.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		65F7778B2644319C0015A334 /* WBooks */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65F777B1264431A20015A334 /* Build configuration list for PBXNativeTarget "WBooks" */;
+			buildPhases = (
+				8728C5BB6E034DC1E7921B16 /* [CP] Check Pods Manifest.lock */,
+				65F777882644319C0015A334 /* Sources */,
+				65F777892644319C0015A334 /* Frameworks */,
+				65F7778A2644319C0015A334 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = WBooks;
+			productName = WBooks;
+			productReference = 65F7778C2644319C0015A334 /* WBooks.app */;
+			productType = "com.apple.product-type.application";
+		};
+		65F7779C264431A20015A334 /* WBooksTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65F777B4264431A20015A334 /* Build configuration list for PBXNativeTarget "WBooksTests" */;
+			buildPhases = (
+				5C28FD6915A2B477ED78F8A8 /* [CP] Check Pods Manifest.lock */,
+				65F77799264431A20015A334 /* Sources */,
+				65F7779A264431A20015A334 /* Frameworks */,
+				65F7779B264431A20015A334 /* Resources */,
+				A1240342C968DDFB7D27821C /* [CP] Embed Pods Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65F7779F264431A20015A334 /* PBXTargetDependency */,
+			);
+			name = WBooksTests;
+			productName = WBooksTests;
+			productReference = 65F7779D264431A20015A334 /* WBooksTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		65F777A7264431A20015A334 /* WBooksUITests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 65F777B7264431A20015A334 /* Build configuration list for PBXNativeTarget "WBooksUITests" */;
+			buildPhases = (
+				B70096AFAC70C7F252104A2D /* [CP] Check Pods Manifest.lock */,
+				65F777A4264431A20015A334 /* Sources */,
+				65F777A5264431A20015A334 /* Frameworks */,
+				65F777A6264431A20015A334 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				65F777AA264431A20015A334 /* PBXTargetDependency */,
+			);
+			name = WBooksUITests;
+			productName = WBooksUITests;
+			productReference = 65F777A8264431A20015A334 /* WBooksUITests.xctest */;
+			productType = "com.apple.product-type.bundle.ui-testing";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		65F777842644319C0015A334 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 1250;
+				LastUpgradeCheck = 1250;
+				TargetAttributes = {
+					65F7778B2644319C0015A334 = {
+						CreatedOnToolsVersion = 12.5;
+					};
+					65F7779C264431A20015A334 = {
+						CreatedOnToolsVersion = 12.5;
+						TestTargetID = 65F7778B2644319C0015A334;
+					};
+					65F777A7264431A20015A334 = {
+						CreatedOnToolsVersion = 12.5;
+						LastSwiftMigration = 1250;
+						TestTargetID = 65F7778B2644319C0015A334;
+					};
+				};
+			};
+			buildConfigurationList = 65F777872644319C0015A334 /* Build configuration list for PBXProject "WBooks" */;
+			compatibilityVersion = "Xcode 9.3";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = 65F777832644319C0015A334;
+			productRefGroup = 65F7778D2644319C0015A334 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				65F7778B2644319C0015A334 /* WBooks */,
+				65F7779C264431A20015A334 /* WBooksTests */,
+				65F777A7264431A20015A334 /* WBooksUITests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		65F7778A2644319C0015A334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65F77797264431A10015A334 /* Preview Assets.xcassets in Resources */,
+				65F777C226443AB60015A334 /* Localizable.strings in Resources */,
+				65F77794264431A10015A334 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F7779B264431A20015A334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F777A6264431A20015A334 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		5C28FD6915A2B477ED78F8A8 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WBooksTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		8728C5BB6E034DC1E7921B16 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WBooks-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		A1240342C968DDFB7D27821C /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WBooksTests/Pods-WBooksTests-frameworks-${CONFIGURATION}-input-files.xcfilelist",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputFileListPaths = (
+				"${PODS_ROOT}/Target Support Files/Pods-WBooksTests/Pods-WBooksTests-frameworks-${CONFIGURATION}-output-files.xcfilelist",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${PODS_ROOT}/Target Support Files/Pods-WBooksTests/Pods-WBooksTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		B70096AFAC70C7F252104A2D /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputFileListPaths = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputFileListPaths = (
+			);
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-WBooks-WBooksUITests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		65F777882644319C0015A334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65F777CB2644501D0015A334 /* PrimaryButtonStyle.swift in Sources */,
+				65F777BC264432510015A334 /* WBooksImages.swift in Sources */,
+				65F777BF2644360E0015A334 /* LoginView.swift in Sources */,
+				65F777C82644458D0015A334 /* LibraryView.swift in Sources */,
+				65F777902644319C0015A334 /* WBooksApp.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F77799264431A20015A334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65D692F4264467EF00223F0E /* PrimaryButtonStyleTests.swift in Sources */,
+				65CBBE2D26445776007E6B72 /* DeviceConstants.swift in Sources */,
+				65F777D0264450D10015A334 /* LoginViewTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		65F777A4264431A20015A334 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				65A8F34026446CF300FDD84B /* WBooksUITests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		65F7779F264431A20015A334 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65F7778B2644319C0015A334 /* WBooks */;
+			targetProxy = 65F7779E264431A20015A334 /* PBXContainerItemProxy */;
+		};
+		65F777AA264431A20015A334 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 65F7778B2644319C0015A334 /* WBooks */;
+			targetProxy = 65F777A9264431A20015A334 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		65F777C426443AB60015A334 /* Localizable.strings */ = {
+			isa = PBXVariantGroup;
+			children = (
+				65F777C326443AB60015A334 /* en */,
+			);
+			name = Localizable.strings;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		65F777AF264431A20015A334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		65F777B0264431A20015A334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.5;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		65F777B2264431A20015A334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 3B1814037BBCFF41D6B7CFCB /* Pods-WBooks.debug.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WBooks/Preview Content\"";
+				DEVELOPMENT_TEAM = ZC7XAH6SD9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolox.WBooks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		65F777B3264431A20015A334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = A14C8F86086D2A933F2CA51A /* Pods-WBooks.release.xcconfig */;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_ASSET_PATHS = "\"WBooks/Preview Content\"";
+				DEVELOPMENT_TEAM = ZC7XAH6SD9;
+				ENABLE_PREVIEWS = YES;
+				INFOPLIST_FILE = WBooks/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolox.WBooks;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		65F777B5264431A20015A334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 12896699BCA47B0A24C25CB0 /* Pods-WBooksTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZC7XAH6SD9;
+				INFOPLIST_FILE = WBooksTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolox.WBooksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WBooks.app/WBooks";
+			};
+			name = Debug;
+		};
+		65F777B6264431A20015A334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 221D202D0461941A1FCE2821 /* Pods-WBooksTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZC7XAH6SD9;
+				INFOPLIST_FILE = WBooksTests/Info.plist;
+				IPHONEOS_DEPLOYMENT_TARGET = 14.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolox.WBooksTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/WBooks.app/WBooks";
+			};
+			name = Release;
+		};
+		65F777B8264431A20015A334 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = C87D2E29BF297415501582DB /* Pods-WBooks-WBooksUITests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZC7XAH6SD9;
+				INFOPLIST_FILE = WBooksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolox.WBooksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WBooks;
+			};
+			name = Debug;
+		};
+		65F777B9264431A20015A334 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 0F663804663E23E762DC2339 /* Pods-WBooks-WBooksUITests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = ZC7XAH6SD9;
+				INFOPLIST_FILE = WBooksUITests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = com.wolox.WBooksUITests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_TARGET_NAME = WBooks;
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		65F777872644319C0015A334 /* Build configuration list for PBXProject "WBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65F777AF264431A20015A334 /* Debug */,
+				65F777B0264431A20015A334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65F777B1264431A20015A334 /* Build configuration list for PBXNativeTarget "WBooks" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65F777B2264431A20015A334 /* Debug */,
+				65F777B3264431A20015A334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65F777B4264431A20015A334 /* Build configuration list for PBXNativeTarget "WBooksTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65F777B5264431A20015A334 /* Debug */,
+				65F777B6264431A20015A334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		65F777B7264431A20015A334 /* Build configuration list for PBXNativeTarget "WBooksUITests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				65F777B8264431A20015A334 /* Debug */,
+				65F777B9264431A20015A334 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = 65F777842644319C0015A334 /* Project object */;
+}

@@ -1,0 +1,10 @@
+/* 
+  Localizable.strings
+  WBooks
+
+  Created by Gabriel Mazzei on 06/05/2021.
+  
+*/
+
+"LoginView.buttonTitle" = "Login with Google";
+"LoginView.bottomText" = "Designed and developed by woloxers";

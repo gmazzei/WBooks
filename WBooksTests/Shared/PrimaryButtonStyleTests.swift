@@ -18,7 +18,7 @@ final class PrimaryButtonStyleTests: XCTestCase {
     }
     
     func testButtonStyle() {
-        let button = VStack {
+        let view = VStack {
             Button("Example", action: {
                 // No-op
             })
@@ -27,7 +27,7 @@ final class PrimaryButtonStyleTests: XCTestCase {
         .frame(maxWidth: .infinity, maxHeight: .infinity)
         .background(Color.blue)
         
-        let referenceFrame = button.frame(width: DeviceConstants.screenSize.width, height: DeviceConstants.screenSize.height)
+        let referenceFrame = view.frame(width: DeviceConstants.screenSize.width, height: DeviceConstants.screenSize.height)
         assertSnapshot(matching: referenceFrame, as: .image)
     }
     

@@ -13,3 +13,6 @@
 // MainView
 "MainView.tabItem.library" = "Library";
 "MainView.tabItem.addNew" = "Add New";
+
+// LibraryView
+"LibrayView.navigationView.title" = "LIBRARY";

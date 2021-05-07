@@ -25,4 +25,12 @@ struct WBooksImages {
     static var addNew: Image {
         return Image("add_new")
     }
+    
+    static var notifications: Image {
+        return Image("notifications")
+    }
+    
+    static var search: Image {
+        return Image("search")
+    }
 }

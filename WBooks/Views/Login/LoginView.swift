@@ -32,7 +32,9 @@ struct LoginView: View {
                         showMainView.toggle()
                     }
                     .buttonStyle(PrimaryButtonStyle())
-                    .fullScreenCover(isPresented: $showMainView, content: MainView.init)
+                    .fullScreenCover(isPresented: $showMainView, content: {
+                        MainView()
+                    })
                 }
                 
                 Spacer()

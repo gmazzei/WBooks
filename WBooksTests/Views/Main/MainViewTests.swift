@@ -18,9 +18,13 @@ final class MainViewTests: XCTestCase {
     }
     
     func testMainView() {
-        let view = MainView()
+        let items: [TabItem] = [
+            TabItem(view: AnyView(Text("Item 1")), imageName: "", localizedKey: "MainView.tabItem.library"),
+            TabItem(view: AnyView(Text("Item 2")), imageName: "", localizedKey: "MainView.tabItem.addNew")
+        ]
+        
+        let view = MainView(items: items)
         let controller = UIHostingController(rootView: view)
         assertSnapshot(matching: controller, as: .image(on: .iPhone8))
     }
-    
 }

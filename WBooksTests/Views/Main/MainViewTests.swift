@@ -25,6 +25,9 @@ final class MainViewTests: XCTestCase {
         
         let view = MainView(items: items)
         let controller = UIHostingController(rootView: view)
-        assertSnapshot(matching: controller, as: .image(on: .iPhone8))
+        
+        TestConstants.devices.forEach { device in
+            assertSnapshot(matching: controller, as: .image(on: device))
+        }
     }
 }

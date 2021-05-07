@@ -7,12 +7,12 @@
 
 import Foundation
 import UIKit
+import SnapshotTesting
 
-struct DeviceConstants {
+struct TestConstants {
     
-    static let iPhone8ScreenSize: CGSize = CGSize(width: 375, height: 667)
+    static let devices: [ViewImageConfig] = [.iPhone8, .iPhone8(.landscape),
+                                             .iPhoneX, .iPhoneX(.landscape),
+                                             .iPhoneSe, .iPhoneSe(.landscape)]
     
-    static var screenSize: CGSize {
-        return iPhone8ScreenSize
-    }
 }

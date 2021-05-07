@@ -20,7 +20,10 @@ final class LoginViewTests: XCTestCase {
     func testLoginView() {
         let view = LoginView()
         let controller = UIHostingController(rootView: view)
-        assertSnapshot(matching: controller, as: .image(on: .iPhone8))
+        
+        TestConstants.devices.forEach { device in
+            assertSnapshot(matching: controller, as: .image(on: device))
+        }
     }
     
 }

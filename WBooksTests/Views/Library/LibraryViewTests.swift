@@ -21,6 +21,9 @@ final class LibraryViewTests: XCTestCase {
         let viewModel = LibraryViewModel(repository: BookRepositoryStub())
         let view = LibraryView(viewModel: viewModel)
         let controller = UIHostingController(rootView: view)
-        assertSnapshot(matching: controller, as: .image(on: .iPhone8))
+        
+        TestConstants.devices.forEach { device in
+            assertSnapshot(matching: controller, as: .image(on: device))
+        }
     }
 }

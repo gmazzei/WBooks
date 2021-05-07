@@ -10,12 +10,10 @@ import SwiftUI
 struct LibraryView: View {
 
     private struct Constants {
-        static let cellHorizontalPadding: CGFloat = 15
-        static let cellVerticalPadding: CGFloat = 8
+        static let cellSpacing: CGFloat = 15
         static let scrollViewTopPadding: CGFloat = 32
         static let scrollViewBottomPadding: CGFloat = 5
-        static let scrollViewHorizontalPadding: CGFloat = 0
-        static let backgroundColor: Color = Color(red: 234/255, green: 246/255, blue: 250/255)
+        static let scrollViewHorizontalPadding: CGFloat = 20 
     }
     
     @ObservedObject private var viewModel: LibraryViewModel
@@ -26,17 +24,14 @@ struct LibraryView: View {
     
     var body: some View {
         ScrollView {
-            LazyVStack {
+            LazyVStack(spacing: Constants.cellSpacing) {
                 ForEach(viewModel.cellModels) { cellModel in
                     NavigationLink(
                         destination: EmptyView(),
                         label: {
                             LibraryCell(viewModel: cellModel)
                         })
-                        .padding(EdgeInsets(top: Constants.cellVerticalPadding,
-                                            leading: Constants.cellHorizontalPadding,
-                                            bottom: Constants.cellVerticalPadding,
-                                            trailing: Constants.cellHorizontalPadding))
+                        .frame(height: LibraryCell.height)
                 }
             }
             .padding(EdgeInsets(top: Constants.scrollViewTopPadding,
@@ -44,7 +39,7 @@ struct LibraryView: View {
                                 bottom: Constants.scrollViewBottomPadding,
                                 trailing: Constants.scrollViewHorizontalPadding))
         }
-        .background(Constants.backgroundColor)
+        .background(WBooksColors.backgroundColor)
         .navigationBarTitle("LibrayView.navigationView.title")
         .navigationBarTitleDisplayMode(.inline)
         .toolbar {
@@ -65,6 +60,9 @@ struct LibraryView: View {
                         .renderingMode(.template)
                 })
             }
+        }
+        .onAppear {
+            viewModel.fetchBooks()
         }
     }
 }

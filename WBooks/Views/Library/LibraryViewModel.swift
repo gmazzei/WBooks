@@ -18,6 +18,11 @@ final class LibraryViewModel: ObservableObject, BookRepositoryTypeDelegate {
         self.repository = repository
         self.cellModels = []
         self.repository.delegate = self
+    }
+    
+    // MARK: - Public interface
+    
+    func fetchBooks() {
         self.repository.fetchBooks()
     }
     

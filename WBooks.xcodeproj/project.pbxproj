@@ -19,6 +19,7 @@
 		65A8F34026446CF300FDD84B /* WBooksUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65A8F33F26446CF300FDD84B /* WBooksUITests.swift */; };
 		65CBBE2D26445776007E6B72 /* DeviceConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBBE2C26445776007E6B72 /* DeviceConstants.swift */; };
 		65D2267C2645E5EC003401B0 /* LibraryCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2267B2645E5EC003401B0 /* LibraryCellTests.swift */; };
+		65D2267E2645F4C1003401B0 /* WBooksColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2267D2645F4C1003401B0 /* WBooksColors.swift */; };
 		65D692F4264467EF00223F0E /* PrimaryButtonStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D692F3264467EF00223F0E /* PrimaryButtonStyleTests.swift */; };
 		65DBD13226459036001BF8A0 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBD13126459036001BF8A0 /* RemoteImage.swift */; };
 		65DBD1362645C319001BF8A0 /* LibraryViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBD1352645C319001BF8A0 /* LibraryViewTests.swift */; };
@@ -72,6 +73,7 @@
 		65A8F33F26446CF300FDD84B /* WBooksUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBooksUITests.swift; sourceTree = "<group>"; };
 		65CBBE2C26445776007E6B72 /* DeviceConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DeviceConstants.swift; sourceTree = "<group>"; };
 		65D2267B2645E5EC003401B0 /* LibraryCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCellTests.swift; sourceTree = "<group>"; };
+		65D2267D2645F4C1003401B0 /* WBooksColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBooksColors.swift; sourceTree = "<group>"; };
 		65D692F3264467EF00223F0E /* PrimaryButtonStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyleTests.swift; sourceTree = "<group>"; };
 		65DBD13126459036001BF8A0 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		65DBD1352645C319001BF8A0 /* LibraryViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewTests.swift; sourceTree = "<group>"; };
@@ -314,6 +316,7 @@
 			isa = PBXGroup;
 			children = (
 				65F777BB264432510015A334 /* WBooksImages.swift */,
+				65D2267D2645F4C1003401B0 /* WBooksColors.swift */,
 			);
 			path = Constants;
 			sourceTree = "<group>";
@@ -585,6 +588,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				65F777CB2644501D0015A334 /* PrimaryButtonStyle.swift in Sources */,
+				65D2267E2645F4C1003401B0 /* WBooksColors.swift in Sources */,
 				6545880426447922003F3A37 /* MainView.swift in Sources */,
 				6545880726447C92003F3A37 /* AddNewView.swift in Sources */,
 				65F777BC264432510015A334 /* WBooksImages.swift in Sources */,

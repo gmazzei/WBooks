@@ -18,6 +18,8 @@ struct RemoteImage: View {
 
         init(url: String) {
             guard let parsedURL = URL(string: url) else {
+                state = .failure
+                objectWillChange.send()
                 return
             }
             

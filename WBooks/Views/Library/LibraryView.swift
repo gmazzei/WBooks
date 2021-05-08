@@ -47,7 +47,7 @@ private struct LibraryList: View {
     
     @ObservedObject private var viewModel: LibraryViewModel
     
-    init(viewModel: LibraryViewModel = LibraryViewModel()) {
+    init(viewModel: LibraryViewModel) {
         self.viewModel = viewModel
     }
     

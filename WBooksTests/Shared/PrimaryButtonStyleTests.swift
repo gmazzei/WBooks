@@ -29,8 +29,8 @@ final class PrimaryButtonStyleTests: XCTestCase {
         
         let controller = UIHostingController(rootView: view)
         
-        TestConstants.devices.forEach { device in
-            assertSnapshot(matching: controller, as: .image(on: device))
+        TestConstants.configurations.forEach { config in
+            assertSnapshot(matching: controller, as: .image(on: config.device), named: config.name)
         }
     }
     

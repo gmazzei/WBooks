@@ -5,8 +5,6 @@
 //  Created by Gabriel Mazzei on 07/05/2021.
 //
 
-@testable import WBooks
-
 final class BookRepositoryStub: BookRepositoryType {
     
     private let books: [Book] = [

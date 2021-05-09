@@ -78,7 +78,6 @@ struct LibraryCell_Previews: PreviewProvider {
                         author: "Charlotte Bronte",
                         image: "https://images.booksense.com/images/499/282/9781788282499.jpg")
         return LibraryCellViewModel(book: book)
-            
     }
     
     static var previews: some View {

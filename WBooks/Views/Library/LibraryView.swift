@@ -95,9 +95,15 @@ private struct LibraryToolbar: ToolbarContent {
 }
 
 struct LibraryView_Previews: PreviewProvider {
+    
+    static var viewModel: LibraryViewModel {
+        let repository = BookRepositoryStub()
+        return LibraryViewModel(repository: repository)
+    }
+    
     static var previews: some View {
         NavigationView{
-            LibraryView()
+            LibraryView(viewModel: viewModel)
         }
     }
 }

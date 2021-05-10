@@ -16,21 +16,12 @@ protocol CommentRepositoryTypeDelegate: AnyObject {
 
 final class CommentRepository: CommentRepositoryType {
     
-    private let comments: [Comment] = [
-        Comment(user: User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"), content: "Nice book!"),
-    ]
-    
     weak var delegate: CommentRepositoryTypeDelegate?
     
     func fetchComments(for book: Book) {
-        delegate?.didFetchComments(comments: comments)
+        API.shared.fetchComments(for: book) { [weak self] comments in
+            self?.delegate?.didFetchComments(comments: comments)
+        }
     }
     
 }

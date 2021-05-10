@@ -17,7 +17,7 @@ struct LibraryView: View {
     
     private var viewModel: LibraryViewModel
     
-    init(viewModel: LibraryViewModel = LibraryViewModel()) {
+    init(viewModel: LibraryViewModel) {
         self.viewModel = viewModel
     }
     
@@ -97,8 +97,7 @@ private struct LibraryToolbar: ToolbarContent {
 struct LibraryView_Previews: PreviewProvider {
     
     static var viewModel: LibraryViewModel {
-        let repository = BookRepositoryStub()
-        return LibraryViewModel(repository: repository)
+        return LibraryViewModel()
     }
     
     static var previews: some View {

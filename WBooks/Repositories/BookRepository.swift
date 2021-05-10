@@ -16,18 +16,11 @@ protocol BookRepositoryTypeDelegate: AnyObject {
 
 final class BookRepository: BookRepositoryType {
     
-    private let books: [Book] = [
-        Book(title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
-        Book(title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
-        Book(title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
-        Book(title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
-        Book(title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
-    ]
-    
     weak var delegate: BookRepositoryTypeDelegate?
     
     func fetchBooks() {
-        delegate?.didFetchBooks(books: books)
+        API.shared.fetchBooks(completion: { [weak self] books in
+            self?.delegate?.didFetchBooks(books: books)
+        })
     }
-    
 }

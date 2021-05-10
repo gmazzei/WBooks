@@ -15,7 +15,17 @@
 "MainView.tabItem.addNew" = "Add New";
 
 // LibraryView
-"LibrayView.navigationView.title" = "LIBRARY";
+"LibrayView.navigationView.title" = "Library";
 
 // BookDetailView
-"BookDetailView.navigationView.title" = "BOOK DETAIL";
+"BookDetailView.navigationView.title" = "Book Detail";
+
+// AddNewView
+"AddNewView.navigationView.title" = "Add New";
+"AddNewView.form.header" = "New Book";
+"AddNewView.form.title" = "Title";
+"AddNewView.form.author" = "Author";
+"AddNewView.form.image" = "Image";
+"AddNewView.form.year" = "Year";
+"AddNewView.form.genre" = "Genre";
+"AddNewView.form.submit" = "Submit";

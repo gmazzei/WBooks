@@ -7,5 +7,6 @@
 
 struct Comment {
     let user: User
+    let book: Book
     let content: String
 }

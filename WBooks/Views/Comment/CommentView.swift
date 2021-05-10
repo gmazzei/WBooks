@@ -42,9 +42,7 @@ struct CommentView_Previews: PreviewProvider {
     private static var viewModel: CommentViewModel {
         let book = Book(title: "Jane Eyre", author: "Charlotte Bronte",
                         image: "", year: 1847, genre: .novel)
-        let repository = CommentRepositoryStub()
-        
-        return CommentViewModel(book: book, repository: repository)
+        return CommentViewModel(book: book)
     }
     
     static var previews: some View {

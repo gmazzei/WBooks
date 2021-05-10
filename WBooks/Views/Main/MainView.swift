@@ -9,8 +9,8 @@ import SwiftUI
 
 private struct Constants {
     static let defaultItems: [TabItem] = [
-        TabItem(view: AnyView(NavigationView { LibraryView() }), imageName: "library", localizedKey: "MainView.tabItem.library"),
-        TabItem(view: AnyView(NavigationView { AddNewView() }), imageName: "add_new", localizedKey: "MainView.tabItem.addNew")
+        TabItem(view: AnyView(NavigationView { LibraryView(viewModel: LibraryViewModel()) }), imageName: "library", localizedKey: "MainView.tabItem.library"),
+        TabItem(view: AnyView(NavigationView { AddNewView(viewModel: AddNewViewModel()) }), imageName: "add_new", localizedKey: "MainView.tabItem.addNew")
     ]
 }
 

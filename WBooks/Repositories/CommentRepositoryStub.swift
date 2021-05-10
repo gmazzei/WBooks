@@ -7,16 +7,14 @@
 
 final class CommentRepositoryStub: CommentRepositoryType {
     
-    private let comments: [Comment] = [
-        Comment(user: User(username: "John Smith", image: ""), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: ""), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: ""), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: ""), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: ""), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: ""), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: ""), content: "Nice book!"),
-        Comment(user: User(username: "John Smith", image: ""), content: "Nice book!"),
-    ]
+    
+    
+    private var comments: [Comment] {
+        let user = User(username: "John Smith", image: "")
+        let book = Book(title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
+        let comment = Comment(user: user, book: book, content: "Nice book!")
+        return [Comment](repeating: comment, count: 20)
+    }
     
     weak var delegate: CommentRepositoryTypeDelegate?
     

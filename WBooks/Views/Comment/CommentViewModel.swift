@@ -9,28 +9,38 @@ import SwiftUI
 
 final class CommentViewModel: ObservableObject, CommentRepositoryTypeDelegate {
     
+    private struct Constants {
+        static let maxElements: Int = 5
+    }
+    
     private let book: Book
     private var repository: CommentRepositoryType
-    @Published private(set) var cellModels: [CommentCellViewModel]
+    @Published private var comments: [Comment]
     
     // MARK: - Initializers
     
     init(book: Book, repository: CommentRepositoryType = CommentRepository()) {
         self.book = book
         self.repository = repository
-        self.cellModels = []
+        self.comments = []
         self.repository.delegate = self
     }
     
     // MARK: - Public interface
     
-    func fetchComment() {
+    func fetchComments() {
         self.repository.fetchComments(for: book)
+    }
+    
+    var cellModels: [CommentCellViewModel] {
+        let size = min(comments.count, Constants.maxElements)
+        let shownComments = comments.prefix(size)
+        return shownComments.map { CommentCellViewModel(comment: $0) }
     }
     
     // MARK: - CommentRepositoryTypeDelegate
     
-    func didFetchComments(comment: [Comment]) {
-        cellModels = comment.map { CommentCellViewModel(comment: $0) }
+    func didFetchComments(comments: [Comment]) {
+        self.comments = comments
     }
 }

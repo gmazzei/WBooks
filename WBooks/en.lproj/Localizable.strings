@@ -16,3 +16,6 @@
 
 // LibraryView
 "LibrayView.navigationView.title" = "LIBRARY";
+
+// BookDetailView
+"BookDetailView.navigationView.title" = "BOOK DETAIL";

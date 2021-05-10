@@ -55,7 +55,7 @@ private struct LibraryList: View {
         LazyVStack(spacing: Constants.cellSpacing) {
             ForEach(viewModel.cellModels) { cellModel in
                 NavigationLink(
-                    destination: EmptyView(),
+                    destination: BookDetailView(viewModel: cellModel.createBookDetailViewModel()),
                     label: {
                         LibraryCell(viewModel: cellModel)
                     })

@@ -29,4 +29,8 @@ struct LibraryCellViewModel: Identifiable {
     var image: String {
         book.image
     }
+    
+    func createBookDetailViewModel() -> BookDetailViewModel {
+        return BookDetailViewModel(book: book)
+    }
 }

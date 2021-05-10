@@ -10,13 +10,14 @@ import SwiftUI
 final class LibraryViewModel: ObservableObject, BookRepositoryTypeDelegate {
     
     private var repository: BookRepositoryType
-    @Published private(set) var cellModels: [LibraryCellViewModel]
+    @Published private var books: [Book]
+    
     
     // MARK: - Initializers
     
     init(repository: BookRepositoryType = BookRepository()) {
+        self.books = []
         self.repository = repository
-        self.cellModels = []
         self.repository.delegate = self
     }
     
@@ -26,9 +27,13 @@ final class LibraryViewModel: ObservableObject, BookRepositoryTypeDelegate {
         self.repository.fetchBooks()
     }
     
+    var cellModels: [LibraryCellViewModel] {
+        return books.map { LibraryCellViewModel(book: $0) }
+    }
+    
     // MARK: - BookRepositoryTypeDelegate
     
     func didFetchBooks(books: [Book]) {
-        cellModels = books.map { LibraryCellViewModel(book: $0) }
+        self.books = books
     }
 }

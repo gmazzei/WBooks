@@ -21,7 +21,7 @@ final class CommentRepositoryStub: CommentRepositoryType {
     weak var delegate: CommentRepositoryTypeDelegate?
     
     func fetchComments(for book: Book) {
-        delegate?.didFetchComments(comment: comments)
+        delegate?.didFetchComments(comments: comments)
     }
     
 }

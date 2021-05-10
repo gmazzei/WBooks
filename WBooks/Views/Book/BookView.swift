@@ -19,6 +19,8 @@ struct BookView: View {
         static let titleColor: Color = .black
         static let secondaryTextColor: Color = Color(white: 0.4)
         
+        static let containerCornerRadius: CGFloat = 10
+        static let containerShadow: CGFloat = 0.3
         static let containerPadding: EdgeInsets = EdgeInsets(top: 16, leading: 16,
                                                              bottom: 16, trailing: 16)
     }
@@ -76,6 +78,8 @@ struct BookView: View {
         }
         .padding(Constants.containerPadding)
         .background(Color.white)
+        .cornerRadius(Constants.containerCornerRadius)
+        .shadow(radius: Constants.containerShadow)
         .frame(minHeight: BookView.height)
     }
 }

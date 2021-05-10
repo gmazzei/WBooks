@@ -10,7 +10,9 @@ import SwiftUI
 struct CommentView: View {
     
     private struct Constants {
-        static let cellSpacing: CGFloat = 4
+        static let cellSpacing: CGFloat = 0
+        static let containerCornerRadius: CGFloat = 10
+        static let containerShadow: CGFloat = 0.3
     }
     
     @ObservedObject private var viewModel: CommentViewModel
@@ -20,22 +22,18 @@ struct CommentView: View {
     }
     
     var body: some View {
-        ScrollView {
-            LazyVStack(spacing: Constants.cellSpacing) {
-                ForEach(viewModel.cellModels) { cellModel in
-                    NavigationLink(
-                        destination: EmptyView(),
-                        label: {
-                            CommentCell(viewModel: cellModel)
-                        })
-                }
+        LazyVStack(spacing: Constants.cellSpacing) {
+            ForEach(viewModel.cellModels) { cellModel in
+                CommentCell(viewModel: cellModel)
             }
         }
+        .cornerRadius(Constants.containerCornerRadius)
+        .shadow(radius: Constants.containerShadow)
         .onAppear(perform: onLoad)
     }
     
     private func onLoad() {
-        viewModel.fetchComment()
+        viewModel.fetchComments()
     }
 }
 

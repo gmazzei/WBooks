@@ -31,6 +31,9 @@
 		65C54AAC2648F6AB004C357C /* BookView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C54AAA2648F6AB004C357C /* BookView.swift */; };
 		65C54AAD2648F6AB004C357C /* BookViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C54AAB2648F6AB004C357C /* BookViewModel.swift */; };
 		65C54AB02648FD97004C357C /* BookViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C54AAF2648FD97004C357C /* BookViewTests.swift */; };
+		65C54AB32648FE64004C357C /* BookDetailView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C54AB22648FE64004C357C /* BookDetailView.swift */; };
+		65C54AB52648FF54004C357C /* BookDetailViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C54AB42648FF54004C357C /* BookDetailViewModel.swift */; };
+		65C54AB8264907DD004C357C /* BookDetailViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65C54AB7264907DD004C357C /* BookDetailViewTests.swift */; };
 		65CBBE2D26445776007E6B72 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBBE2C26445776007E6B72 /* TestConstants.swift */; };
 		65D2267C2645E5EC003401B0 /* LibraryCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2267B2645E5EC003401B0 /* LibraryCellTests.swift */; };
 		65D2267E2645F4C1003401B0 /* WBooksColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2267D2645F4C1003401B0 /* WBooksColors.swift */; };
@@ -97,6 +100,9 @@
 		65C54AAA2648F6AB004C357C /* BookView.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookView.swift; path = WBooks/Views/Book/BookView.swift; sourceTree = SOURCE_ROOT; };
 		65C54AAB2648F6AB004C357C /* BookViewModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; name = BookViewModel.swift; path = WBooks/Views/Book/BookViewModel.swift; sourceTree = SOURCE_ROOT; };
 		65C54AAF2648FD97004C357C /* BookViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookViewTests.swift; sourceTree = "<group>"; };
+		65C54AB22648FE64004C357C /* BookDetailView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailView.swift; sourceTree = "<group>"; };
+		65C54AB42648FF54004C357C /* BookDetailViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewModel.swift; sourceTree = "<group>"; };
+		65C54AB7264907DD004C357C /* BookDetailViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BookDetailViewTests.swift; sourceTree = "<group>"; };
 		65CBBE2C26445776007E6B72 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		65D2267B2645E5EC003401B0 /* LibraryCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCellTests.swift; sourceTree = "<group>"; };
 		65D2267D2645F4C1003401B0 /* WBooksColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBooksColors.swift; sourceTree = "<group>"; };
@@ -164,13 +170,6 @@
 				221D202D0461941A1FCE2821 /* Pods-WBooksTests.release.xcconfig */,
 			);
 			path = Pods;
-			sourceTree = "<group>";
-		};
-		651498D0264895DA0024C8FA /* Book */ = {
-			isa = PBXGroup;
-			children = (
-			);
-			path = Book;
 			sourceTree = "<group>";
 		};
 		651498D32648961E0024C8FA /* Comment */ = {
@@ -249,10 +248,10 @@
 			children = (
 				65C54AA52648F3FF004C357C /* Book */,
 				651498D32648961E0024C8FA /* Comment */,
-				651498D0264895DA0024C8FA /* Book */,
 				6545880526447C87003F3A37 /* AddNew */,
 				6545880226447908003F3A37 /* Main */,
 				65F777C6264445710015A334 /* Library */,
+				65C54AB12648FE44004C357C /* BookDetail */,
 				65F777BD264432AD0015A334 /* Login */,
 			);
 			path = Views;
@@ -285,6 +284,23 @@
 			path = Book;
 			sourceTree = "<group>";
 		};
+		65C54AB12648FE44004C357C /* BookDetail */ = {
+			isa = PBXGroup;
+			children = (
+				65C54AB22648FE64004C357C /* BookDetailView.swift */,
+				65C54AB42648FF54004C357C /* BookDetailViewModel.swift */,
+			);
+			path = BookDetail;
+			sourceTree = "<group>";
+		};
+		65C54AB6264907CD004C357C /* BookDetail */ = {
+			isa = PBXGroup;
+			children = (
+				65C54AB7264907DD004C357C /* BookDetailViewTests.swift */,
+			);
+			path = BookDetail;
+			sourceTree = "<group>";
+		};
 		65D2267A2645E59D003401B0 /* LibraryCell */ = {
 			isa = PBXGroup;
 			children = (
@@ -313,6 +329,7 @@
 		65DBD1342645C2F0001BF8A0 /* Views */ = {
 			isa = PBXGroup;
 			children = (
+				65C54AB6264907CD004C357C /* BookDetail */,
 				65C54AAE2648FD80004C357C /* Book */,
 				651498E42648A5660024C8FA /* Comment */,
 				65DBD1332645C2E7001BF8A0 /* Library */,
@@ -689,6 +706,7 @@
 				6561848E2644CFA700EEB3EB /* Book.swift in Sources */,
 				65F777C82644458D0015A334 /* LibraryView.swift in Sources */,
 				65C54AAD2648F6AB004C357C /* BookViewModel.swift in Sources */,
+				65C54AB52648FF54004C357C /* BookDetailViewModel.swift in Sources */,
 				651498DE26489F4C0024C8FA /* CommentViewModel.swift in Sources */,
 				651498D7264896460024C8FA /* CommentRepository.swift in Sources */,
 				651498D22648960B0024C8FA /* CommentCell.swift in Sources */,
@@ -700,6 +718,7 @@
 				65DBD1392645C427001BF8A0 /* BookRepository.swift in Sources */,
 				651498E12648A3620024C8FA /* BookRepositoryStub.swift in Sources */,
 				651498E026489F5A0024C8FA /* CommentView.swift in Sources */,
+				65C54AB32648FE64004C357C /* BookDetailView.swift in Sources */,
 				65F777902644319C0015A334 /* WBooksApp.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -716,6 +735,7 @@
 				65DBD1362645C319001BF8A0 /* LibraryViewTests.swift in Sources */,
 				65D2267C2645E5EC003401B0 /* LibraryCellTests.swift in Sources */,
 				65F777D0264450D10015A334 /* LoginViewTests.swift in Sources */,
+				65C54AB8264907DD004C357C /* BookDetailViewTests.swift in Sources */,
 				65C54AB02648FD97004C357C /* BookViewTests.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

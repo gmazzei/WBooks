@@ -11,7 +11,7 @@ protocol CommentRepositoryType {
 }
 
 protocol CommentRepositoryTypeDelegate: AnyObject {
-    func didFetchComments(comment: [Comment])
+    func didFetchComments(comments: [Comment])
 }
 
 final class CommentRepository: CommentRepositoryType {
@@ -30,7 +30,7 @@ final class CommentRepository: CommentRepositoryType {
     weak var delegate: CommentRepositoryTypeDelegate?
     
     func fetchComments(for book: Book) {
-        delegate?.didFetchComments(comment: comments)
+        delegate?.didFetchComments(comments: comments)
     }
     
 }

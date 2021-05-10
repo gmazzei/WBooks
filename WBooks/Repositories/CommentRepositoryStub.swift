@@ -7,8 +7,6 @@
 
 final class CommentRepositoryStub: CommentRepositoryType {
     
-    
-    
     private var comments: [Comment] {
         let user = User(username: "John Smith", image: "")
         let book = Book(title: "Title", author: "Author", image: "", year: 2021, genre: .novel)

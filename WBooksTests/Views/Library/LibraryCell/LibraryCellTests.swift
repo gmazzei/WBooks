@@ -18,7 +18,7 @@ final class LibraryCellTests: XCTestCase {
     }
     
     func testLibraryCell() {
-        let book = Book(title: "Title", author: "Author", image: "")
+        let book = Book(title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
         let viewModel = LibraryCellViewModel(book: book)
         let view = LibraryCell(viewModel: viewModel)
         let controller = UIHostingController(rootView: view)

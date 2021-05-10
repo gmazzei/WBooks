@@ -67,7 +67,7 @@ struct CommentCell: View {
 
 struct CommentCell_Previews: PreviewProvider {
     private static var viewModel: CommentCellViewModel {
-        let user = User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg")
+        let user = User(username: "John Smith", image: "")
         let comment = Comment(user: user, content: "Nice book!")
         return CommentCellViewModel(comment: comment)
     }

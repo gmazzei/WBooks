@@ -1,8 +1,8 @@
 //
-//  CommentViewTests.swift
+//  BookViewTests.swift
 //  WBooksTests
 //
-//  Created by Gabriel Mazzei on 09/05/2021.
+//  Created by Gabriel Mazzei on 10/05/2021.
 //
 
 @testable import WBooks
@@ -10,17 +10,17 @@ import XCTest
 import SnapshotTesting
 import SwiftUI
 
-final class CommentViewTests: XCTestCase {
+final class BookViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
         isRecording = false
     }
     
-    func testCommentView() {
+    func testBookView() {
         let book = Book(title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
-        let viewModel = CommentViewModel(book: book, repository: CommentRepositoryStub())
-        let view = CommentView(viewModel: viewModel)
+        let viewModel = BookViewModel(book: book)
+        let view = BookView(viewModel: viewModel)
         let controller = UIHostingController(rootView: view)
         
         TestConstants.configurations.forEach { config in

@@ -1,26 +1,24 @@
 //
-//  LibraryCell.swift
-//  WBooks
+//  BookView.swift
+//  WBooksTests
 //
-//  Created by Gabriel Mazzei on 06/05/2021.
+//  Created by Gabriel Mazzei on 10/05/2021.
 //
 
 import SwiftUI
 
-struct LibraryCell: View {
+struct BookView: View {
     
     private struct Constants {
+        static let imageHeight: CGFloat = 120
+        static let imageWidth: CGFloat = 84
         static let imageCornerRadius: CGFloat = 5
-        static let imageWidth: CGFloat = 64
-        static let imageHeight: CGFloat = 88
         
         static let columnSpacing: CGFloat = 12
         static let textSpacing: CGFloat = 5
-        static let titleColor: Color = Color(white: 0.3)
-        static let authorColor: Color = Color(white: 0.4)
+        static let titleColor: Color = .black
+        static let secondaryTextColor: Color = Color(white: 0.4)
         
-        static let containerCornerRadius: CGFloat = 10
-        static let containerShadow: CGFloat = 0.3
         static let containerPadding: EdgeInsets = EdgeInsets(top: 16, leading: 16,
                                                              bottom: 16, trailing: 16)
     }
@@ -31,14 +29,14 @@ struct LibraryCell: View {
     
     static var spacing: CGFloat = 16
     
-    private let viewModel: LibraryCellViewModel
+    private let viewModel: BookViewModel
     
-    init(viewModel: LibraryCellViewModel) {
+    init(viewModel: BookViewModel) {
         self.viewModel = viewModel
     }
     
     var body: some View {
-        HStack(spacing: Constants.columnSpacing) {
+        HStack(alignment: .top, spacing: Constants.columnSpacing) {
             ZStack {
                 RemoteImage(url: viewModel.image)
                     .cornerRadius(Constants.imageCornerRadius)
@@ -48,15 +46,27 @@ struct LibraryCell: View {
             .background(Color(white: 0.97))
             .cornerRadius(Constants.imageCornerRadius)
             
+            
             VStack(alignment: .leading, spacing: Constants.textSpacing) {
                 Text(viewModel.title)
                     .foregroundColor(Constants.titleColor)
                     .fontWeight(.bold)
+                    .font(.title)
                     .fixedSize(horizontal: false, vertical: true)
                     .lineLimit(2)
                 
                 Text(viewModel.author)
-                    .foregroundColor(Constants.authorColor)
+                    .foregroundColor(Constants.secondaryTextColor)
+                    .fontWeight(.light)
+                    .fixedSize(horizontal: false, vertical: true)
+                    .lineLimit(2)
+                
+                Text(viewModel.year.description)
+                    .foregroundColor(Constants.secondaryTextColor)
+                    .fontWeight(.light)
+                
+                Text(viewModel.genre)
+                    .foregroundColor(Constants.secondaryTextColor)
                     .fontWeight(.light)
                 
                 Spacer()
@@ -66,20 +76,18 @@ struct LibraryCell: View {
         }
         .padding(Constants.containerPadding)
         .background(Color.white)
-        .cornerRadius(Constants.containerCornerRadius)
-        .shadow(radius: Constants.containerShadow)
-        .frame(height: LibraryCell.height)
+        .frame(minHeight: BookView.height)
     }
 }
 
-struct LibraryCell_Previews: PreviewProvider {
-    private static var viewModel: LibraryCellViewModel {
+struct BookView_Previews: PreviewProvider {
+    private static var viewModel: BookViewModel {
         let book = Book(title: "Jane Eyre", author: "Charlotte Bronte",
                         image: "", year: 1847, genre: .novel)
-        return LibraryCellViewModel(book: book)
+        return BookViewModel(book: book)
     }
     
     static var previews: some View {
-        LibraryCell(viewModel: viewModel)
+        BookView(viewModel: viewModel)
     }
 }

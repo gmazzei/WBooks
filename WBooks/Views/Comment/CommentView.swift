@@ -42,9 +42,8 @@ struct CommentView: View {
 struct CommentView_Previews: PreviewProvider {
     
     private static var viewModel: CommentViewModel {
-        let book = Book(title: "Jane Eyre",
-                        author: "Charlotte Bronte",
-                        image: "https://images.booksense.com/images/499/282/9781788282499.jpg")
+        let book = Book(title: "Jane Eyre", author: "Charlotte Bronte",
+                        image: "", year: 1847, genre: .novel)
         let repository = CommentRepositoryStub()
         
         return CommentViewModel(book: book, repository: repository)

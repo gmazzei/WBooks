@@ -61,7 +61,13 @@ final class API {
         completion(list)
     }
     
-    func save(book: Book, completion: () -> Void) {
+    func save(unidentifiedBook: UnidentifiedBook, completion: () -> Void) {
+        let imageUrl = saveImage(encodedString: unidentifiedBook.image)
+        print("2 - \(imageUrl)")
+        
+        let book = Book(id: UUID(), title: unidentifiedBook.title,
+                        author: unidentifiedBook.author, image: imageUrl,
+                        year: unidentifiedBook.year, genre: unidentifiedBook.genre)
         self.books.append(book)
         completion()
     }
@@ -79,7 +85,9 @@ final class API {
             return
         }
         
-        if rent.user == user  {
+        if rent.to < Date() {
+            completion(.available)
+        } else if rent.user == user {
             completion(.inYourHands)
         } else {
             completion(.unavailable)
@@ -88,6 +96,23 @@ final class API {
     
     func login(completion: (User) -> Void) {
         completion(testUser)
+    }
+    
+    private func getDocumentsDirectory() -> URL {
+        let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)
+        return paths[0]
+    }
+    
+    private func saveImage(encodedString: String) -> String {
+        guard let data = Data(base64Encoded: encodedString, options: .ignoreUnknownCharacters) else { return "" }
+
+        let url = getDocumentsDirectory().appendingPathComponent(UUID().uuidString)
+        do {
+            try data.write(to: url)
+            return url.absoluteString
+        } catch {
+            return ""
+        }
     }
 }
 

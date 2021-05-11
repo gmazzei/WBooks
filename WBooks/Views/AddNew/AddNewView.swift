@@ -41,17 +41,33 @@ private struct FormView: View {
     }
     
     @ObservedObject private var viewModel: AddNewViewModel
+    @State private var showImagePicker: Bool
     
     init(viewModel: AddNewViewModel) {
         self.viewModel = viewModel
+        self.showImagePicker = false
     }
     
     var body: some View {
         Form {
+            Section {
+                ZStack {
+                    Image(uiImage: viewModel.image)
+                        .resizable()
+                        .aspectRatio(contentMode: .fill)
+                        .frame(width: 100, height: 100)
+                }
+                .frame(width: 100, height: 100)
+                .background(Color.blue)
+                .cornerRadius(5)
+                .onTapGesture {
+                    showImagePicker.toggle()
+                }
+            }
+            
             Section(header: Text("AddNewView.form.header")) {
                 TextField("AddNewView.form.title", text: $viewModel.title)
                 TextField("AddNewView.form.author", text: $viewModel.author)
-                TextField("AddNewView.form.image", text: $viewModel.image)
                 TextField("AddNewView.form.year", text: $viewModel.year)
                     .keyboardType(.numberPad)
                 Picker("AddNewView.form.genre", selection: $viewModel.genre) {
@@ -66,6 +82,9 @@ private struct FormView: View {
             }, label: {
                 Text("AddNewView.form.submit")
             })
+        }
+        .sheet(isPresented: $showImagePicker) {
+            ImagePicker(image: $viewModel.image)
         }
     }
     

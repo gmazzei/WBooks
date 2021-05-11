@@ -7,7 +7,7 @@
 
 protocol AddNewRepositoryType {
     var delegate: AddNewRepositoryTypeDelegate? { get set }
-    func save(book: Book)
+    func save(unidentifiedBook: UnidentifiedBook)
 }
 
 protocol AddNewRepositoryTypeDelegate: AnyObject {
@@ -18,8 +18,8 @@ final class AddNewRepository: AddNewRepositoryType {
     
     weak var delegate: AddNewRepositoryTypeDelegate?
     
-    func save(book: Book) {
-        API.shared.save(book: book) { [weak self] in
+    func save(unidentifiedBook: UnidentifiedBook) {
+        API.shared.save(unidentifiedBook: unidentifiedBook) { [weak self] in
             self?.delegate?.didSaveBook()
         }
     }

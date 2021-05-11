@@ -12,8 +12,8 @@ protocol RentRepositoryType {
 }
 
 protocol RentRepositoryTypeDelegate: AnyObject {
-    func didRentBook(rent: Rent)
-    func didFetchRent(rent: Rent?)
+    func didRentBook(status: Status)
+    func didFetchRent(status: Status)
 }
 
 final class RentRepository: RentRepositoryType {
@@ -21,14 +21,14 @@ final class RentRepository: RentRepositoryType {
     weak var delegate: RentRepositoryTypeDelegate?
 
     func rent(book: Book) {
-        API.shared.rent(book: book, user: Auth.shared.user) { [weak self] rent in
-            self?.delegate?.didRentBook(rent: rent)
+        API.shared.rent(book: book, user: Auth.shared.user) { [weak self] status in
+            self?.delegate?.didRentBook(status: status)
         }
     }
     
     func fetchRent(book: Book) {
-        API.shared.fetchRent(book: book) { [weak self] rent in
-            self?.delegate?.didFetchRent(rent: rent)
+        API.shared.fetchRent(book: book, user: Auth.shared.user) { [weak self] status in
+            self?.delegate?.didFetchRent(status: status)
         }
     }
 }

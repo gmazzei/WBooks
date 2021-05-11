@@ -45,7 +45,9 @@ final class API {
             Comment(user: users[1], book: books[1], content: "Nice book!"),
         ]
         
-        self.rents = []
+        self.rents = [
+            Rent(book: books[1], user: users[0], from: Date(), to: Calendar.current.tomorrow)
+        ]
     }
     
     // MARK: - Public interface
@@ -64,20 +66,36 @@ final class API {
         completion()
     }
     
-    func rent(book: Book, user: User, completion: (Rent) -> Void) {
+    func rent(book: Book, user: User, completion: (Status) -> Void) {
         let today = Date()
-        guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: today) else { return }
-        let rent = Rent(book: book, user: user, from: today, to: tomorrow)
+        let rent = Rent(book: book, user: user, from: today, to: Calendar.current.tomorrow)
         self.rents.append(rent)
-        completion(rent)
+        completion(.inYourHands)
     }
     
-    func fetchRent(book: Book, completion: (Rent?) -> Void) {
-        let rent = rents.last(where: { $0.book == book })
-        completion(rent)
+    func fetchRent(book: Book, user: User, completion: (Status) -> Void) {
+        guard let rent = rents.last(where: { $0.book == book }) else {
+            completion(.available)
+            return
+        }
+        
+        if rent.user == user  {
+            completion(.inYourHands)
+        } else {
+            completion(.unavailable)
+        }
     }
     
     func login(completion: (User) -> Void) {
         completion(testUser)
     }
+}
+
+private extension Calendar {
+    
+    var tomorrow: Date {
+        guard let tomorrow = Calendar.current.date(byAdding: .day, value: 1, to: Date()) else { return Date() }
+        return tomorrow
+    }
+    
 }

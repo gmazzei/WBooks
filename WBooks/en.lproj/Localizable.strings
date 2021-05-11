@@ -19,7 +19,9 @@
 
 // BookDetailView
 "BookDetailView.navigationView.title" = "Book Detail";
-"BookDetailView.button.title" = "Rent";
+"BookDetailView.button.title.available" = "Rent";
+"BookDetailView.button.title.unavailable" = "Unavailable";
+"BookDetailView.button.title.inYourHands" = "In Your Hands";
 
 // AddNewView
 "AddNewView.navigationView.title" = "Add New";

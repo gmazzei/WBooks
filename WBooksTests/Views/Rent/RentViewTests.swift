@@ -17,9 +17,34 @@ final class RentViewTests: XCTestCase {
         isRecording = false
     }
     
-    func testRentView() {
+    func testRentViewWithUnavailableStatus() {
         let book = Book(id: UUID(), title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
-        let viewModel = RentViewModel(book: book)
+        let repository = RentRepositoryStub(status: .unavailable)
+        let viewModel = RentViewModel(book: book, repository: repository)
+        let view = RentView(viewModel: viewModel)
+        let controller = UIHostingController(rootView: view)
+        
+        TestConstants.configurations.forEach { config in
+            assertSnapshot(matching: controller, as: .image(on: config.device), named: config.name)
+        }
+    }
+    
+    func testRentViewWithAvailableStatus() {
+        let book = Book(id: UUID(), title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
+        let repository = RentRepositoryStub(status: .available)
+        let viewModel = RentViewModel(book: book, repository: repository)
+        let view = RentView(viewModel: viewModel)
+        let controller = UIHostingController(rootView: view)
+        
+        TestConstants.configurations.forEach { config in
+            assertSnapshot(matching: controller, as: .image(on: config.device), named: config.name)
+        }
+    }
+    
+    func testRentViewWithInYourHandsStatus() {
+        let book = Book(id: UUID(), title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
+        let repository = RentRepositoryStub(status: .inYourHands)
+        let viewModel = RentViewModel(book: book, repository: repository)
         let view = RentView(viewModel: viewModel)
         let controller = UIHostingController(rootView: view)
         

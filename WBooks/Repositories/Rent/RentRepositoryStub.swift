@@ -10,12 +10,17 @@ import Foundation
 final class RentRepositoryStub: RentRepositoryType {
     
     weak var delegate: RentRepositoryTypeDelegate?
+    private let status: Status
+    
+    init(status: Status = .available) {
+        self.status = status
+    }
     
     func rent(book: Book) {
         // No-op
     }
     
     func fetchRent(book: Book) {
-        // No-op
+        delegate?.didFetchRent(status: status)
     }
 }

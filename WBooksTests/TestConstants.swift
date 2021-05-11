@@ -16,8 +16,7 @@ struct TestConstants {
                                                       TestConfiguration(name: "iPhoneX_portrait", device: .iPhoneX),
                                                       TestConfiguration(name: "iPhoneX_landscape", device: .iPhoneX(.landscape)),
                                                       TestConfiguration(name: "iPhoneSe_portrait", device: .iPhoneSe),
-                                                      TestConfiguration(name: "iPhoneSe_landscape", device: .iPhoneSe(.landscape))]
-    
+                                                      TestConfiguration(name: "iPhoneSe_landscape", device: .iPhoneSe(.landscape))]    
 }
 
 struct TestConfiguration {

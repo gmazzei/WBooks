@@ -16,7 +16,7 @@ struct RentView: View {
     }
     
     var body: some View {
-        GradientButton("BookDetailView.button.title", isEnabled: viewModel.canRent) {
+        GradientButton(viewModel.buttonText, isEnabled: viewModel.canRent) {
             viewModel.makeRent()
         }
         .onAppear(perform: viewModel.fetchRent)

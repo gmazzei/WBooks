@@ -9,7 +9,7 @@ final class Auth {
     
     static let shared = Auth()
     
-    let user: User = User(username: "test", image: "")
+    var user: User!
     
     private init() { }
 }

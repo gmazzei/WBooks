@@ -30,6 +30,9 @@
 		6545880726447C92003F3A37 /* AddNewView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545880626447C92003F3A37 /* AddNewView.swift */; };
 		6545880A26447E57003F3A37 /* MainViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6545880926447E57003F3A37 /* MainViewTests.swift */; };
 		655DF4AD2644A8500045A487 /* TabItem.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655DF4AC2644A8500045A487 /* TabItem.swift */; };
+		655EE303264AD59D00711AEE /* LoginRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655EE302264AD59D00711AEE /* LoginRepository.swift */; };
+		655EE305264AD66000711AEE /* LoginRepositoryStub.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655EE304264AD66000711AEE /* LoginRepositoryStub.swift */; };
+		655EE307264AD6A900711AEE /* LoginViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 655EE306264AD6A900711AEE /* LoginViewModel.swift */; };
 		6561848E2644CFA700EEB3EB /* Book.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6561848D2644CFA700EEB3EB /* Book.swift */; };
 		656184922644D0B500EEB3EB /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656184912644D0B500EEB3EB /* LibraryViewModel.swift */; };
 		656184952644D25700EEB3EB /* LibraryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656184942644D25700EEB3EB /* LibraryCellViewModel.swift */; };
@@ -111,6 +114,9 @@
 		6545880626447C92003F3A37 /* AddNewView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddNewView.swift; sourceTree = "<group>"; };
 		6545880926447E57003F3A37 /* MainViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MainViewTests.swift; sourceTree = "<group>"; };
 		655DF4AC2644A8500045A487 /* TabItem.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TabItem.swift; sourceTree = "<group>"; };
+		655EE302264AD59D00711AEE /* LoginRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepository.swift; sourceTree = "<group>"; };
+		655EE304264AD66000711AEE /* LoginRepositoryStub.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginRepositoryStub.swift; sourceTree = "<group>"; };
+		655EE306264AD6A900711AEE /* LoginViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoginViewModel.swift; sourceTree = "<group>"; };
 		6561848D2644CFA700EEB3EB /* Book.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Book.swift; sourceTree = "<group>"; };
 		656184912644D0B500EEB3EB /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		656184942644D25700EEB3EB /* LibraryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCellViewModel.swift; sourceTree = "<group>"; };
@@ -275,6 +281,50 @@
 			path = Main;
 			sourceTree = "<group>";
 		};
+		655EE2FC264AD49200711AEE /* Library */ = {
+			isa = PBXGroup;
+			children = (
+				65DBD1382645C427001BF8A0 /* LibraryRepository.swift */,
+				65DBD13B2645C9D8001BF8A0 /* LibraryRepositoryStub.swift */,
+			);
+			path = Library;
+			sourceTree = "<group>";
+		};
+		655EE2FD264AD4A000711AEE /* Comment */ = {
+			isa = PBXGroup;
+			children = (
+				651498D6264896460024C8FA /* CommentRepository.swift */,
+				651498E22648A3940024C8FA /* CommentRepositoryStub.swift */,
+			);
+			path = Comment;
+			sourceTree = "<group>";
+		};
+		655EE2FE264AD4A600711AEE /* Rent */ = {
+			isa = PBXGroup;
+			children = (
+				659DEA3F264A0A6D00781680 /* RentRepository.swift */,
+				65449F32264A5B7D001A6C45 /* RentRepositoryStub.swift */,
+			);
+			path = Rent;
+			sourceTree = "<group>";
+		};
+		655EE2FF264AD4B700711AEE /* AddNew */ = {
+			isa = PBXGroup;
+			children = (
+				6511E5262649801A0039B503 /* AddNewRepository.swift */,
+			);
+			path = AddNew;
+			sourceTree = "<group>";
+		};
+		655EE300264AD4CC00711AEE /* Login */ = {
+			isa = PBXGroup;
+			children = (
+				655EE302264AD59D00711AEE /* LoginRepository.swift */,
+				655EE304264AD66000711AEE /* LoginRepositoryStub.swift */,
+			);
+			path = Login;
+			sourceTree = "<group>";
+		};
 		6561848B2644CF6900EEB3EB /* Models */ = {
 			isa = PBXGroup;
 			children = (
@@ -404,13 +454,11 @@
 		65DBD1372645C40F001BF8A0 /* Repositories */ = {
 			isa = PBXGroup;
 			children = (
-				65DBD1382645C427001BF8A0 /* LibraryRepository.swift */,
-				651498D6264896460024C8FA /* CommentRepository.swift */,
-				65DBD13B2645C9D8001BF8A0 /* LibraryRepositoryStub.swift */,
-				651498E22648A3940024C8FA /* CommentRepositoryStub.swift */,
-				6511E5262649801A0039B503 /* AddNewRepository.swift */,
-				659DEA3F264A0A6D00781680 /* RentRepository.swift */,
-				65449F32264A5B7D001A6C45 /* RentRepositoryStub.swift */,
+				655EE300264AD4CC00711AEE /* Login */,
+				655EE2FF264AD4B700711AEE /* AddNew */,
+				655EE2FE264AD4A600711AEE /* Rent */,
+				655EE2FD264AD4A000711AEE /* Comment */,
+				655EE2FC264AD49200711AEE /* Library */,
 			);
 			path = Repositories;
 			sourceTree = "<group>";
@@ -497,6 +545,7 @@
 			isa = PBXGroup;
 			children = (
 				65F777BE2644360E0015A334 /* LoginView.swift */,
+				655EE306264AD6A900711AEE /* LoginViewModel.swift */,
 			);
 			path = Login;
 			sourceTree = "<group>";
@@ -770,6 +819,7 @@
 				6545880726447C92003F3A37 /* AddNewView.swift in Sources */,
 				65F777BC264432510015A334 /* WBooksImages.swift in Sources */,
 				65F777BF2644360E0015A334 /* LoginView.swift in Sources */,
+				655EE305264AD66000711AEE /* LoginRepositoryStub.swift in Sources */,
 				656184952644D25700EEB3EB /* LibraryCellViewModel.swift in Sources */,
 				659DEA47264A0C3200781680 /* Auth.swift in Sources */,
 				659DEA42264A0AF500781680 /* Rent.swift in Sources */,
@@ -779,12 +829,14 @@
 				65F777C82644458D0015A334 /* LibraryView.swift in Sources */,
 				65C54AAD2648F6AB004C357C /* BookViewModel.swift in Sources */,
 				659DEA3E2649F58900781680 /* GradientButton.swift in Sources */,
+				655EE307264AD6A900711AEE /* LoginViewModel.swift in Sources */,
 				65C54AB52648FF54004C357C /* BookDetailViewModel.swift in Sources */,
 				651498DE26489F4C0024C8FA /* CommentViewModel.swift in Sources */,
 				6511E52526497B100039B503 /* Genre.swift in Sources */,
 				651498D7264896460024C8FA /* CommentRepository.swift in Sources */,
 				651498D22648960B0024C8FA /* CommentCell.swift in Sources */,
 				65449F2F264A4F8F001A6C45 /* RentView.swift in Sources */,
+				655EE303264AD59D00711AEE /* LoginRepository.swift in Sources */,
 				651498E32648A3940024C8FA /* CommentRepositoryStub.swift in Sources */,
 				655DF4AD2644A8500045A487 /* TabItem.swift in Sources */,
 				656184972644D2BB00EEB3EB /* LibraryCell.swift in Sources */,

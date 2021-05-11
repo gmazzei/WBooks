@@ -18,7 +18,9 @@ final class LoginViewTests: XCTestCase {
     }
     
     func testLoginView() {
-        let view = LoginView()
+        let repository = LoginRepositoryStub()
+        let viewModel = LoginViewModel(repository: repository)
+        let view = LoginView(viewModel: viewModel)
         let controller = UIHostingController(rootView: view)
         
         TestConstants.configurations.forEach { config in

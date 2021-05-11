@@ -34,7 +34,7 @@ struct WBooksApp: App {
     
     var body: some Scene {
         WindowGroup {
-            LoginView()
+            LoginView(viewModel: LoginViewModel())
         }
     }
 }

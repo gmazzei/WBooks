@@ -11,6 +11,8 @@ final class API {
     
     static let shared = API()
     
+    private let testUser = User(username: "Test", image: "https://images.booksense.com/images/499/282/9781788282499.jpg")
+    
     private var books: [Book]
     private var users: [User]
     private var comments: [Comment]
@@ -26,10 +28,10 @@ final class API {
         ]
         
         self.users = [
-            Auth.shared.user,
             User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
             User(username: "Jane Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
-            User(username: "Pepe Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg")
+            User(username: "Pepe Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
+            testUser
         ]
         
         self.comments = [
@@ -73,5 +75,9 @@ final class API {
     func fetchRent(book: Book, completion: (Rent?) -> Void) {
         let rent = rents.last(where: { $0.book == book })
         completion(rent)
+    }
+    
+    func login(completion: (User) -> Void) {
+        completion(testUser)
     }
 }

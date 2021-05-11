@@ -15,7 +15,11 @@ struct LoginView: View {
         static let stackSpacing: CGFloat = 40
     }
     
-    @State private var showMainView: Bool = false
+    @ObservedObject private var viewModel: LoginViewModel
+    
+    init(viewModel: LoginViewModel) {
+        self.viewModel = viewModel
+    }
     
     var body: some View {
         ZStack {
@@ -29,10 +33,10 @@ struct LoginView: View {
                         .frame(width: Constants.imageWidth)
                     
                     Button("LoginView.buttonTitle") {
-                        showMainView.toggle()
+                        viewModel.login()
                     }
                     .buttonStyle(PrimaryButtonStyle())
-                    .fullScreenCover(isPresented: $showMainView, content: {
+                    .fullScreenCover(isPresented: $viewModel.isLogged, content: {
                         MainView()
                     })
                 }
@@ -55,7 +59,8 @@ struct LoginView: View {
 }
 
 struct LoginView_Previews: PreviewProvider {
+    
     static var previews: some View {
-        LoginView()
+        LoginView(viewModel: LoginViewModel())
     }
 }

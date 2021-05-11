@@ -7,15 +7,15 @@
 
 import SwiftUI
 
-final class LibraryViewModel: ObservableObject, BookRepositoryTypeDelegate {
+final class LibraryViewModel: ObservableObject, LibraryRepositoryTypeDelegate {
     
-    private var repository: BookRepositoryType
+    private var repository: LibraryRepositoryType
     @Published private var books: [Book]
     
     
     // MARK: - Initializers
     
-    init(repository: BookRepositoryType = BookRepository()) {
+    init(repository: LibraryRepositoryType = LibraryRepository()) {
         self.books = []
         self.repository = repository
         self.repository.delegate = self

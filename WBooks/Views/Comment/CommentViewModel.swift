@@ -20,9 +20,9 @@ final class CommentViewModel: ObservableObject, CommentRepositoryTypeDelegate {
     // MARK: - Initializers
     
     init(book: Book, repository: CommentRepositoryType = CommentRepository()) {
+        self.comments = []
         self.book = book
         self.repository = repository
-        self.comments = []
         self.repository.delegate = self
     }
     

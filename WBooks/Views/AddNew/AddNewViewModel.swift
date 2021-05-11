@@ -22,7 +22,7 @@ final class AddNewViewModel: ObservableObject {
     }
     
     func submit() {
-        let book = Book(title: title, author: author, image: image, year: Int(year)!, genre: genre)
+        let book = Book(id: UUID(), title: title, author: author, image: image, year: Int(year)!, genre: genre)
         repository.save(book: book)
     }
 }

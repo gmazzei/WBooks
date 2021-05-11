@@ -18,9 +18,9 @@ final class BookViewTests: XCTestCase {
     }
     
     func testBookView() {
-        let book = Book(title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
+        let book = Book(id: UUID(), title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
         let viewModel = BookViewModel(book: book)
-        let view = BookView(viewModel: viewModel)
+        let view = BookView(viewModel: viewModel, buttonView: AnyView(EmptyView()))
         let controller = UIHostingController(rootView: view)
         
         TestConstants.configurations.forEach { config in

@@ -18,8 +18,8 @@ final class BookDetailViewTests: XCTestCase {
     }
     
     func testBookView() {
-        let book = Book(title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
-        let viewModel = BookDetailViewModel(book: book, repository: CommentRepositoryStub())
+        let book = Book(id: UUID(), title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
+        let viewModel = BookDetailViewModel(book: book, rentRepository: RentRepositoryStub(), commentRepository: CommentRepositoryStub())
         let view = BookDetailView(viewModel: viewModel)
         let controller = UIHostingController(rootView: view)
         

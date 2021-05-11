@@ -68,14 +68,14 @@ struct CommentCell: View {
 struct CommentCell_Previews: PreviewProvider {
     private static var viewModel: CommentCellViewModel {
         let user = User(username: "John Smith", image: "")
-        let book = Book(title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
+        let book = Book(id: UUID(), title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
         let comment = Comment(user: user, book: book, content: "Nice book!")
         return CommentCellViewModel(comment: comment)
     }
     
     private static var viewModelLongText: CommentCellViewModel {
         let user = User(username: "John Smith John Smith John Smith", image: "")
-        let book = Book(title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
+        let book = Book(id: UUID(), title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
         let comment = Comment(user: user, book: book, content: "Lorem ipsum dolor sit amet, consectetur adipiscing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat.")
         return CommentCellViewModel(comment: comment)
     }

@@ -74,7 +74,7 @@ struct LibraryCell: View {
 
 struct LibraryCell_Previews: PreviewProvider {
     private static var viewModel: LibraryCellViewModel {
-        let book = Book(title: "Jane Eyre", author: "Charlotte Bronte",
+        let book = Book(id: UUID(), title: "Jane Eyre", author: "Charlotte Bronte",
                         image: "", year: 1847, genre: .novel)
         return LibraryCellViewModel(book: book)
     }

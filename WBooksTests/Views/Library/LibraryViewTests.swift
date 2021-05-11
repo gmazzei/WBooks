@@ -18,7 +18,7 @@ final class LibraryViewTests: XCTestCase {
     }
     
     func testLibraryView() {
-        let viewModel = LibraryViewModel(repository: BookRepositoryStub())
+        let viewModel = LibraryViewModel(repository: LibraryRepositoryStub())
         let view = LibraryView(viewModel: viewModel)
         let controller = UIHostingController(rootView: view)
         

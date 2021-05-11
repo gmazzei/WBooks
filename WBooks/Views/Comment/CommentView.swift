@@ -40,8 +40,8 @@ struct CommentView: View {
 struct CommentView_Previews: PreviewProvider {
     
     private static var viewModel: CommentViewModel {
-        let book = Book(title: "Jane Eyre", author: "Charlotte Bronte",
-                        image: "", year: 1847, genre: .novel)
+        let book = Book(id: UUID(), title: "Title", author: "Author",
+                        image: "", year: 2021, genre: .novel)
         return CommentViewModel(book: book)
     }
     

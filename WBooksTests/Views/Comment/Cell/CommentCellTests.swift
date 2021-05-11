@@ -19,7 +19,7 @@ final class CommentCellTests: XCTestCase {
     
     func testCommentCell() {
         let user = User(username: "John Smith", image: "")
-        let book = Book(title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
+        let book = Book(id: UUID(), title: "Title", author: "Author", image: "", year: 2021, genre: .novel)
         let comment = Comment(user: user, book: book, content: "Nice book!")
         let viewModel = CommentCellViewModel(comment: comment)
         let view = CommentCell(viewModel: viewModel)

@@ -1,22 +1,22 @@
 //
-//  BookRepository.swift
+//  LibraryRepository.swift
 //  WBooks
 //
 //  Created by Gabriel Mazzei on 07/05/2021.
 //
 
-protocol BookRepositoryType {
-    var delegate: BookRepositoryTypeDelegate? { get set }
+protocol LibraryRepositoryType {
+    var delegate: LibraryRepositoryTypeDelegate? { get set }
     func fetchBooks()
 }
 
-protocol BookRepositoryTypeDelegate: AnyObject {
+protocol LibraryRepositoryTypeDelegate: AnyObject {
     func didFetchBooks(books: [Book])
 }
 
-final class BookRepository: BookRepositoryType {
+final class LibraryRepository: LibraryRepositoryType {
     
-    weak var delegate: BookRepositoryTypeDelegate?
+    weak var delegate: LibraryRepositoryTypeDelegate?
     
     func fetchBooks() {
         API.shared.fetchBooks(completion: { [weak self] books in

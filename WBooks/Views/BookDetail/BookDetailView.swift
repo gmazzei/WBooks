@@ -25,8 +25,8 @@ struct BookDetailView: View {
     var body: some View {
         ScrollView {
             VStack(spacing: Constants.sectionSpacing) {
-                
-                BookView(viewModel: viewModel.createBookViewModel())
+                BookView(viewModel: viewModel.createBookViewModel(),
+                         buttonView: AnyView(RentView(viewModel: viewModel.createRentViewModel())))
                 CommentView(viewModel: viewModel.createCommentViewModel())
             }
             .padding(EdgeInsets(top: Constants.scrollViewTopPadding,
@@ -43,9 +43,9 @@ struct BookDetailView: View {
 struct BookDetailView_Previews: PreviewProvider {
     
     private static var viewModel: BookDetailViewModel {
-        let book = Book(title: "Title", author: "Author",
+        let book = Book(id: UUID(), title: "Title", author: "Author",
                         image: "", year: 2021, genre: .novel)
-        return BookDetailViewModel(book: book, repository: CommentRepositoryStub())
+        return BookDetailViewModel(book: book)
     }
     
     static var previews: some View {

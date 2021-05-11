@@ -8,9 +8,9 @@
 
 import Foundation
 
-struct BookViewModel {
+final class BookViewModel {
     
-    private let book: Book
+    private var book: Book
     
     init(book: Book) {
         self.book = book

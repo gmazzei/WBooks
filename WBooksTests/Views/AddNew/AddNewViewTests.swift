@@ -19,7 +19,7 @@ final class AddNewViewTests: XCTestCase {
     
     func testAddNewView() {
         let repository = AddNewRepositoryStub()
-        let viewModel = AddNewViewModel.init(repository: repository)
+        let viewModel = AddNewViewModel(repository: repository)
         let view = AddNewView(viewModel: viewModel)
         let controller = UIHostingController(rootView: view)
         

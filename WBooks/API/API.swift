@@ -61,15 +61,24 @@ final class API {
         completion(list)
     }
     
-    func save(unidentifiedBook: UnidentifiedBook, completion: () -> Void) {
-        let imageUrl = saveImage(encodedString: unidentifiedBook.image)
-        print("2 - \(imageUrl)")
-        
-        let book = Book(id: UUID(), title: unidentifiedBook.title,
-                        author: unidentifiedBook.author, image: imageUrl,
-                        year: unidentifiedBook.year, genre: unidentifiedBook.genre)
-        self.books.append(book)
-        completion()
+    func save(unidentifiedBook: UnidentifiedBook, completion: @escaping () -> Void) {
+        DispatchQueue.global(qos: .background).async { [weak self] in
+            guard let self = self else {
+                completion()
+                return
+            }
+            
+            let imageUrl = self.saveImage(encodedString: unidentifiedBook.image)
+            
+            DispatchQueue.main.async {
+                let book = Book(id: UUID(), title: unidentifiedBook.title,
+                                author: unidentifiedBook.author, image: imageUrl,
+                                year: unidentifiedBook.year, genre: unidentifiedBook.genre)
+                
+                self.books.append(book)
+                completion()
+            }
+        }
     }
     
     func rent(book: Book, user: User, completion: (Status) -> Void) {
@@ -97,6 +106,8 @@ final class API {
     func login(completion: (User) -> Void) {
         completion(testUser)
     }
+    
+    // MARK: - Private utilities
     
     private func getDocumentsDirectory() -> URL {
         let paths = FileManager.default.urls(for: .documentDirectory, in: .userDomainMask)

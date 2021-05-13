@@ -6,6 +6,7 @@
 //
 
 import SwiftUI
+import Combine
 
 struct AddNewView: View {
     
@@ -15,33 +16,11 @@ struct AddNewView: View {
         static let formHorizontalPadding: CGFloat = 20
     }
     
-    private let viewModel: AddNewViewModel
-    
-    init(viewModel: AddNewViewModel) {
-        self.viewModel = viewModel
-    }
-    
-    var body: some View {
-        FormView(viewModel: viewModel)
-            .padding(EdgeInsets(top: Constants.formTopPadding,
-                                leading: Constants.formHorizontalPadding,
-                                bottom: Constants.formBottomPadding,
-                                trailing: Constants.formHorizontalPadding))
-            .navigationBarTitle("AddNewView.navigationView.title")
-            .navigationBarTitleDisplayMode(.inline)
-    }
-}
-
-private struct FormView: View {
-    
-    private struct Constants {
-        static let formTopPadding: CGFloat = 32
-        static let formBottomPadding: CGFloat = 20
-        static let formHorizontalPadding: CGFloat = 20
-    }
-    
     @ObservedObject private var viewModel: AddNewViewModel
     @State private var showImagePicker: Bool
+    private var isSubmitEnabled: Bool {
+        return false
+    }
     
     init(viewModel: AddNewViewModel) {
         self.viewModel = viewModel
@@ -49,47 +28,80 @@ private struct FormView: View {
     }
     
     var body: some View {
-        Form {
-            Section {
-                ZStack {
-                    Image(uiImage: viewModel.image)
-                        .resizable()
-                        .aspectRatio(contentMode: .fill)
-                        .frame(width: 100, height: 100)
-                }
-                .frame(width: 100, height: 100)
-                .background(Color.blue)
-                .cornerRadius(5)
-                .onTapGesture {
-                    showImagePicker.toggle()
-                }
-            }
-            
-            Section(header: Text("AddNewView.form.header")) {
-                TextField("AddNewView.form.title", text: $viewModel.title)
-                TextField("AddNewView.form.author", text: $viewModel.author)
-                TextField("AddNewView.form.year", text: $viewModel.year)
-                    .keyboardType(.numberPad)
-                Picker("AddNewView.form.genre", selection: $viewModel.genre) {
-                    ForEach(Genre.allCases, id: \.self) {
-                        Text(String($0.description))
+        ScrollView {
+            Group {
+                VStack(alignment: .leading) {
+                    ZStack {
+                        Image(systemName: "plus.circle")
+                            .resizable()
+                            .foregroundColor(.white)
+                            .aspectRatio(contentMode: .fit)
+                            .frame(width: 40)
+                        
+                        Image(uiImage: viewModel.image)
+                            .resizable()
+                            .aspectRatio(contentMode: .fill)
+                            .frame(width: 100, height: 100)
+                    }
+                    .frame(width: 100, height: 100)
+                    .background(WBooksColors.backgroundColor)
+                    .cornerRadius(5)
+                    .onTapGesture {
+                        showImagePicker.toggle()
+                    }
+                    .padding(.bottom, 30)
+                    
+                    VStack(spacing: 20) {
+                        TextField("AddNewView.form.title", text: $viewModel.title)
+                            .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
+                            .modifier(NotEmptyTextValidatorModifier(for: viewModel.title))
+                            .disableAutocorrection(true)
+                        
+                        TextField("AddNewView.form.author", text: $viewModel.author)
+                            .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
+                            .modifier(NotEmptyTextValidatorModifier(for: viewModel.author))
+                            .disableAutocorrection(true)
+                        
+                        TextField("AddNewView.form.year", text: $viewModel.year)
+                            .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
+                            .modifier(YearTextValidatorModifier(for: viewModel.year))
+                            .keyboardType(.numberPad)
+                        
+                        NavigationLink(
+                            destination: GenreView(viewModel: viewModel),
+                            label: {
+                                HStack {
+                                    Text("AddNewView.form.genre")
+                                    Spacer()
+                                    Text(viewModel.genre.description)
+                                        .foregroundColor(.black)
+                                    Image(systemName: "chevron.right")
+                                }
+                                .foregroundColor(Color(white: 0.7))
+                                .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
+                            })
+                        
+                    }
+                    .padding(.bottom, 35)
+                    
+                    GradientButton("AddNewView.form.submit", isEnabled: isSubmitEnabled) {
+                        viewModel.submit()
                     }
                 }
+                .padding(.horizontal, 26)
             }
-            
-            Button(action: {
-                viewModel.submit()
-            }, label: {
-                Text("AddNewView.form.submit")
-            })
+            .padding(.top, 40)
+            .padding(.bottom, 20)
         }
+        
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: $viewModel.image)
         }
+        .navigationBarTitle("AddNewView.navigationView.title")
+        .navigationBarTitleDisplayMode(.inline)
     }
     
 }
-
 
 struct AddNewView_Previews: PreviewProvider {
     static var previews: some View {

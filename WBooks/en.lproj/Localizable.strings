@@ -25,10 +25,18 @@
 
 // AddNewView
 "AddNewView.navigationView.title" = "Add New";
-"AddNewView.form.header" = "New Book";
 "AddNewView.form.title" = "Title";
 "AddNewView.form.author" = "Author";
 "AddNewView.form.image" = "Image";
 "AddNewView.form.year" = "Year";
 "AddNewView.form.genre" = "Genre";
 "AddNewView.form.submit" = "Submit";
+
+// NotEmptyTextValidatorModifier
+"NotEmptyTextValidatorModifier.error.message" = "This field should not be empty";
+
+// YearTextValidatorModifier
+"YearTextValidatorModifier.error.message" = "The value should be valid year";
+
+// GenreView
+"GenreView.title" = "Select Genre";

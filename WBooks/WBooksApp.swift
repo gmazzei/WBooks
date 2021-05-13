@@ -30,6 +30,8 @@ struct WBooksApp: App {
         UINavigationBar.appearance().standardAppearance = appearance
         
         UINavigationBar.appearance().tintColor = .white
+        
+        UITableView.appearance().backgroundColor = .clear
     }
     
     var body: some Scene {

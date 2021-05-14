@@ -35,12 +35,8 @@ struct GradientButton: View {
                 .textCase(.uppercase)
                 .foregroundColor(Constants.fontColor)
         })
-        .padding(
-            EdgeInsets(top: Constants.verticalPadding,
-                       leading: Constants.horizontalPadding,
-                       bottom: Constants.verticalPadding,
-                       trailing: Constants.horizontalPadding)
-        )
+        .padding(.horizontal, Constants.horizontalPadding)
+        .padding(.vertical, Constants.verticalPadding)
         .background(
             LinearGradient(gradient: Gradient(colors: isEnabled ? [WBooksColors.primaryBlue, WBooksColors.primaryGreen] : [Constants.disabledColor, Constants.disabledColor]), startPoint: .leading, endPoint: .trailing)
         )

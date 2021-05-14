@@ -32,10 +32,10 @@ struct LoginView: View {
                         .aspectRatio(contentMode: .fit)
                         .frame(width: Constants.imageWidth)
                     
-                    Button("LoginView.buttonTitle") {
+                    HollowButton("LoginView.buttonTitle", mainColor: .white) {
                         viewModel.login()
                     }
-                    .buttonStyle(PrimaryButtonStyle())
+                    .fixedSize()
                     .fullScreenCover(isPresented: $viewModel.isLogged, content: {
                         MainView()
                     })

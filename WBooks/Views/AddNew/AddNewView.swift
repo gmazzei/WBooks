@@ -17,14 +17,9 @@ struct AddNewView: View {
     }
     
     @ObservedObject private var viewModel: AddNewViewModel
-    @State private var showImagePicker: Bool
-    private var isSubmitEnabled: Bool {
-        return false
-    }
     
     init(viewModel: AddNewViewModel) {
         self.viewModel = viewModel
-        self.showImagePicker = false
     }
     
     var body: some View {
@@ -47,24 +42,24 @@ struct AddNewView: View {
                     .background(WBooksColors.backgroundColor)
                     .cornerRadius(5)
                     .onTapGesture {
-                        showImagePicker.toggle()
+                        viewModel.showImagePicker.toggle()
                     }
                     .padding(.bottom, 30)
                     
                     VStack(spacing: 20) {
                         TextField("AddNewView.form.title", text: $viewModel.title)
                             .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
-                            .modifier(NotEmptyTextValidatorModifier(for: viewModel.title))
+                            .modifier(NotEmptyTextValidatorModifier(for: viewModel.title, valid: $viewModel.titleIsValid))
                             .disableAutocorrection(true)
                         
                         TextField("AddNewView.form.author", text: $viewModel.author)
                             .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
-                            .modifier(NotEmptyTextValidatorModifier(for: viewModel.author))
+                            .modifier(NotEmptyTextValidatorModifier(for: viewModel.author, valid: $viewModel.authorIsValid))
                             .disableAutocorrection(true)
                         
                         TextField("AddNewView.form.year", text: $viewModel.year)
                             .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
-                            .modifier(YearTextValidatorModifier(for: viewModel.year))
+                            .modifier(YearTextValidatorModifier(for: viewModel.year, valid: $viewModel.yearIsValid))
                             .keyboardType(.numberPad)
                         
                         NavigationLink(
@@ -84,7 +79,7 @@ struct AddNewView: View {
                     }
                     .padding(.bottom, 35)
                     
-                    GradientButton("AddNewView.form.submit", isEnabled: isSubmitEnabled) {
+                    GradientButton("AddNewView.form.submit", isEnabled: viewModel.isSubmitEnabled) {
                         viewModel.submit()
                     }
                 }
@@ -94,7 +89,7 @@ struct AddNewView: View {
             .padding(.bottom, 20)
         }
         
-        .sheet(isPresented: $showImagePicker) {
+        .sheet(isPresented: $viewModel.showImagePicker) {
             ImagePicker(image: $viewModel.image)
         }
         .navigationBarTitle("AddNewView.navigationView.title")

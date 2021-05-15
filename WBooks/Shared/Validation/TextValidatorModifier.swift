@@ -10,12 +10,13 @@ import Combine
 
 struct TextValidatorModifier<T>: ViewModifier where T: Equatable {
     
-    @State private var valid: Bool = true
+    @Binding var valid: Bool
     private let value: T
     private let condition: (T) -> Bool
     private let message: LocalizedStringKey
     
-    init(for value: T, message: LocalizedStringKey, condition: @escaping (T) -> Bool) {
+    init(for value: T, message: LocalizedStringKey, valid: Binding<Bool>, condition: @escaping (T) -> Bool) {
+        self._valid = valid
         self.value = value
         self.message = message
         self.condition = condition

@@ -11,16 +11,45 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
      
     private var repository: AddNewRepositoryType
     
-    @Published var title: String = ""
-    @Published var author: String = ""
-    @Published var image: UIImage = UIImage()
-    @Published var year: String = ""
-    @Published var genre: Genre = .educational
+    // MARK: - Fields
+    
+    @Published var image: UIImage
+    @Published var title: String
+    @Published var author: String
+    @Published var year: String
+    @Published var genre: Genre
+    
+    // MARK: - Validation
+    
+    @Published var titleIsValid: Bool
+    @Published var authorIsValid: Bool
+    @Published var yearIsValid: Bool
+    
+    var isSubmitEnabled: Bool {
+        return titleIsValid && authorIsValid && yearIsValid
+    }
+    
+    // MARK: - Presentation
+    
+    @Published var showImagePicker: Bool
+    
+    // MARK: - Initializer
     
     init(repository: AddNewRepositoryType = AddNewRepository()) {
         self.repository = repository
+        self.image = UIImage()
+        self.title = ""
+        self.author = ""
+        self.year = ""
+        self.genre = .educational
+        self.titleIsValid = true
+        self.authorIsValid = true
+        self.yearIsValid = true
+        self.showImagePicker = false
         self.repository.delegate = self
     }
+    
+    // MARK: - Public interface
     
     func submit() {
         DispatchQueue.global(qos: .background).async { [weak self] in
@@ -33,12 +62,6 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
         }
     }
     
-    // MARK: - AddNewRepositoryTypeDelegate
-    
-    func didSaveBook() {
-        clear()
-    }
-    
     // MARK: - Private utilities
     
     private func clear() {
@@ -47,5 +70,14 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
         image = UIImage()
         year = ""
         genre = .educational
+        titleIsValid = true
+        authorIsValid = true
+        yearIsValid = true
+    }
+    
+    // MARK: - AddNewRepositoryTypeDelegate
+    
+    func didSaveBook() {
+        clear()
     }
 }

@@ -6,12 +6,18 @@
 //
 
 import SwiftUI
+import Combine
 
 final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
-     
-    private var repository: AddNewRepositoryType
     
-    // MARK: - Fields
+    private struct Constants {
+        static let emptyImage: UIImage = UIImage()
+    }
+    
+    private var repository: AddNewRepositoryType
+    private var cancellableSet: Set<AnyCancellable>
+    
+    // MARK: - Presentation
     
     @Published var image: UIImage
     @Published var title: String
@@ -19,34 +25,89 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
     @Published var year: String
     @Published var genre: Genre
     
-    // MARK: - Validation
-    
-    @Published var titleIsValid: Bool
-    @Published var authorIsValid: Bool
-    @Published var yearIsValid: Bool
-    
-    var isSubmitEnabled: Bool {
-        return titleIsValid && authorIsValid && yearIsValid
-    }
-    
-    // MARK: - Presentation
-    
-    @Published var showImagePicker: Bool
+    @Published var submitEnabled: Bool
+    @Published var imageMessage: LocalizedStringKey
+    @Published var titleMessage: LocalizedStringKey
+    @Published var authorMessage: LocalizedStringKey
+    @Published var yearMessage: LocalizedStringKey
     
     // MARK: - Initializer
     
     init(repository: AddNewRepositoryType = AddNewRepository()) {
         self.repository = repository
-        self.image = UIImage()
+        self.cancellableSet = []
+        self.image = Constants.emptyImage
         self.title = ""
         self.author = ""
         self.year = ""
         self.genre = .educational
-        self.titleIsValid = true
-        self.authorIsValid = true
-        self.yearIsValid = true
-        self.showImagePicker = false
+        self.submitEnabled = false
+        self.imageMessage = ""
+        self.titleMessage = ""
+        self.authorMessage = ""
+        self.yearMessage = ""
         self.repository.delegate = self
+        setupPublishers()
+    }
+    
+    private func setupPublishers() {
+        let isImageValidPublisher = $image
+            .dropFirst()
+            .map { $0 != Constants.emptyImage }
+            .eraseToAnyPublisher()
+        
+        let isTitleValidPublisher = $title
+            .dropFirst()
+            .map { !$0.isEmpty }
+            .eraseToAnyPublisher()
+        
+        let isAuthorValidPublisher = $author
+            .dropFirst()
+            .map { !$0.isEmpty }
+            .eraseToAnyPublisher()
+        
+        let isYearValidPublisher = $year
+            .dropFirst()
+            .map { Int($0) != nil }
+            .eraseToAnyPublisher()
+        
+        isImageValidPublisher
+            .receive(on: RunLoop.main)
+            .map { valid in
+                valid ? "" : "AddNewViewModel.image.error.message"
+            }
+            .assign(to: \.imageMessage, on: self)
+            .store(in: &cancellableSet)
+        
+        isTitleValidPublisher
+            .receive(on: RunLoop.main)
+            .map { valid in
+                valid ? "" : "AddNewViewModel.title.error.message"
+            }
+            .assign(to: \.titleMessage, on: self)
+            .store(in: &cancellableSet)
+        
+        isAuthorValidPublisher
+            .receive(on: RunLoop.main)
+            .map { valid in
+                valid ? "" : "AddNewViewModel.author.error.message"
+            }
+            .assign(to: \.authorMessage, on: self)
+            .store(in: &cancellableSet)
+        
+        isYearValidPublisher
+            .receive(on: RunLoop.main)
+            .map { valid in
+                valid ? "" : "AddNewViewModel.year.error.message"
+            }
+            .assign(to: \.yearMessage, on: self)
+            .store(in: &cancellableSet)
+        
+        Publishers.CombineLatest4(isImageValidPublisher, isTitleValidPublisher, isAuthorValidPublisher, isYearValidPublisher)
+            .map { $0 && $1 && $2 && $3 }
+            .receive(on: RunLoop.main)
+            .assign(to: \.submitEnabled, on: self)
+            .store(in: &cancellableSet)
     }
     
     // MARK: - Public interface
@@ -64,20 +125,24 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
     
     // MARK: - Private utilities
     
-    private func clear() {
+    private func clearFields() {
+        image = UIImage()
         title = ""
         author = ""
-        image = UIImage()
         year = ""
         genre = .educational
-        titleIsValid = true
-        authorIsValid = true
-        yearIsValid = true
+    }
+    
+    private func cancelPublishers() {
+        cancellableSet.forEach { $0.cancel() }
+        cancellableSet.removeAll()
     }
     
     // MARK: - AddNewRepositoryTypeDelegate
     
     func didSaveBook() {
-        clear()
+        clearFields()
+        cancelPublishers()
+        setupPublishers()
     }
 }

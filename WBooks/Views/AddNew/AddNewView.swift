@@ -14,12 +14,16 @@ struct AddNewView: View {
         static let formTopPadding: CGFloat = 32
         static let formBottomPadding: CGFloat = 20
         static let formHorizontalPadding: CGFloat = 20
+        static let lineColor: Color = Color(white: 0.9)
+        static let errorColor: Color = .red
     }
     
     @ObservedObject private var viewModel: AddNewViewModel
+    @State private var showImagePicker: Bool
     
     init(viewModel: AddNewViewModel) {
         self.viewModel = viewModel
+        self.showImagePicker = false
     }
     
     var body: some View {
@@ -42,44 +46,73 @@ struct AddNewView: View {
                     .background(WBooksColors.backgroundColor)
                     .cornerRadius(5)
                     .onTapGesture {
-                        viewModel.showImagePicker.toggle()
+                        showImagePicker.toggle()
                     }
-                    .padding(.bottom, 30)
+                    .padding(.bottom, 32)
                     
-                    VStack(spacing: 20) {
-                        TextField("AddNewView.form.title", text: $viewModel.title)
-                            .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
-                            .modifier(NotEmptyTextValidatorModifier(for: viewModel.title, valid: $viewModel.titleIsValid))
-                            .disableAutocorrection(true)
+                    VStack(spacing: 16) {
                         
-                        TextField("AddNewView.form.author", text: $viewModel.author)
-                            .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
-                            .modifier(NotEmptyTextValidatorModifier(for: viewModel.author, valid: $viewModel.authorIsValid))
-                            .disableAutocorrection(true)
+                        VStack(alignment: .leading, spacing: 10) {
+                            TextField("AddNewView.form.title", text: $viewModel.title)
+                                    .disableAutocorrection(true)
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(Constants.lineColor)
+                            
+                            Text(viewModel.titleMessage)
+                                .font(.footnote)
+                                .foregroundColor(Constants.errorColor)
+                                .frame(height: 16)
+                        }
+    
+                        VStack(alignment: .leading, spacing: 10) {
+                            TextField("AddNewView.form.author", text: $viewModel.author)
+                                    .disableAutocorrection(true)
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(Constants.lineColor)
+                            Text(viewModel.authorMessage)
+                                .font(.footnote)
+                                .foregroundColor(Constants.errorColor)
+                                .frame(height: 16)
+                        }
                         
-                        TextField("AddNewView.form.year", text: $viewModel.year)
-                            .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
-                            .modifier(YearTextValidatorModifier(for: viewModel.year, valid: $viewModel.yearIsValid))
-                            .keyboardType(.numberPad)
+                        VStack(alignment: .leading, spacing: 10) {
+                            TextField("AddNewView.form.year", text: $viewModel.year)
+                                    .disableAutocorrection(true)
+                                    .keyboardType(.numberPad)
+                            Rectangle()
+                                .frame(height: 1)
+                                .foregroundColor(Constants.lineColor)
+                            Text(viewModel.yearMessage)
+                                .font(.footnote)
+                                .foregroundColor(Constants.errorColor)
+                                .frame(height: 16)
+                        }
                         
                         NavigationLink(
                             destination: GenreView(viewModel: viewModel),
                             label: {
-                                HStack {
-                                    Text("AddNewView.form.genre")
-                                    Spacer()
-                                    Text(viewModel.genre.description)
-                                        .foregroundColor(.black)
-                                    Image(systemName: "chevron.right")
+                                VStack(alignment: .leading, spacing: 10) {
+                                    HStack {
+                                        Text("AddNewView.form.genre")
+                                        Spacer()
+                                        Text(viewModel.genre.description)
+                                            .foregroundColor(.black)
+                                        Image(systemName: "chevron.right")
+                                    }
+                                    .foregroundColor(Color(white: 0.7))
+                                    Rectangle()
+                                        .frame(height: 1)
+                                        .foregroundColor(Constants.lineColor)
                                 }
-                                .foregroundColor(Color(white: 0.7))
-                                .modifier(UnderlinedTextViewModifier(color: Color(white: 0.9)))
-                            })
+                            }
+                        )
                         
                     }
-                    .padding(.bottom, 35)
+                    .padding(.bottom, 32)
                     
-                    GradientButton("AddNewView.form.submit", isEnabled: viewModel.isSubmitEnabled) {
+                    GradientButton("AddNewView.form.submit", isEnabled: viewModel.submitEnabled) {
                         viewModel.submit()
                     }
                 }
@@ -89,7 +122,7 @@ struct AddNewView: View {
             .padding(.bottom, 20)
         }
         
-        .sheet(isPresented: $viewModel.showImagePicker) {
+        .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: $viewModel.image)
         }
         .navigationBarTitle("AddNewView.navigationView.title")

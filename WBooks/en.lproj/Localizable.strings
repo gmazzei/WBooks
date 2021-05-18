@@ -32,11 +32,12 @@
 "AddNewView.form.genre" = "Genre";
 "AddNewView.form.submit" = "Submit";
 
-// NotEmptyTextValidatorModifier
-"NotEmptyTextValidatorModifier.error.message" = "This field should not be empty";
+// AddNewViewModel
+"AddNewViewModel.image.error.message" = "The image should not be empty";
+"AddNewViewModel.title.error.message" = "The title should not be empty";
+"AddNewViewModel.author.error.message" = "The author should not be empty";
+"AddNewViewModel.year.error.message" = "The year should be valid";
 
-// YearTextValidatorModifier
-"YearTextValidatorModifier.error.message" = "The value should be valid year";
 
 // GenreView
 "GenreView.title" = "Select Genre";

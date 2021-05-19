@@ -45,6 +45,9 @@
 		656184952644D25700EEB3EB /* LibraryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656184942644D25700EEB3EB /* LibraryCellViewModel.swift */; };
 		656184972644D2BB00EEB3EB /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656184962644D2BB00EEB3EB /* LibraryCell.swift */; };
 		6567C98A2655672D00AE1A95 /* ProgressViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6567C9892655672D00AE1A95 /* ProgressViewModifier.swift */; };
+		6567C98D2655790000AE1A95 /* GenreViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6567C98C2655790000AE1A95 /* GenreViewTests.swift */; };
+		6567C99126557ABC00AE1A95 /* HollowButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6567C99026557ABC00AE1A95 /* HollowButtonTests.swift */; };
+		6567C99326557ACA00AE1A95 /* GradientButtonTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6567C99226557ACA00AE1A95 /* GradientButtonTests.swift */; };
 		6596C72D2649BEEF00A91604 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6596C72C2649BEEF00A91604 /* API.swift */; };
 		659DEA3E2649F58900781680 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DEA3D2649F58900781680 /* GradientButton.swift */; };
 		659DEA40264A0A6D00781680 /* RentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DEA3F264A0A6D00781680 /* RentRepository.swift */; };
@@ -61,7 +64,6 @@
 		65CBBE2D26445776007E6B72 /* TestConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65CBBE2C26445776007E6B72 /* TestConstants.swift */; };
 		65D2267C2645E5EC003401B0 /* LibraryCellTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2267B2645E5EC003401B0 /* LibraryCellTests.swift */; };
 		65D2267E2645F4C1003401B0 /* WBooksColors.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D2267D2645F4C1003401B0 /* WBooksColors.swift */; };
-		65D692F4264467EF00223F0E /* PrimaryButtonStyleTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65D692F3264467EF00223F0E /* PrimaryButtonStyleTests.swift */; };
 		65DBD13226459036001BF8A0 /* RemoteImage.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBD13126459036001BF8A0 /* RemoteImage.swift */; };
 		65DBD1362645C319001BF8A0 /* LibraryViewTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBD1352645C319001BF8A0 /* LibraryViewTests.swift */; };
 		65DBD1392645C427001BF8A0 /* LibraryRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 65DBD1382645C427001BF8A0 /* LibraryRepository.swift */; };
@@ -137,6 +139,9 @@
 		656184942644D25700EEB3EB /* LibraryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCellViewModel.swift; sourceTree = "<group>"; };
 		656184962644D2BB00EEB3EB /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
 		6567C9892655672D00AE1A95 /* ProgressViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModifier.swift; sourceTree = "<group>"; };
+		6567C98C2655790000AE1A95 /* GenreViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenreViewTests.swift; sourceTree = "<group>"; };
+		6567C99026557ABC00AE1A95 /* HollowButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = HollowButtonTests.swift; sourceTree = "<group>"; };
+		6567C99226557ACA00AE1A95 /* GradientButtonTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButtonTests.swift; sourceTree = "<group>"; };
 		6596C72C2649BEEF00A91604 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		659DEA3D2649F58900781680 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		659DEA3F264A0A6D00781680 /* RentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentRepository.swift; sourceTree = "<group>"; };
@@ -153,7 +158,6 @@
 		65CBBE2C26445776007E6B72 /* TestConstants.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TestConstants.swift; sourceTree = "<group>"; };
 		65D2267B2645E5EC003401B0 /* LibraryCellTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCellTests.swift; sourceTree = "<group>"; };
 		65D2267D2645F4C1003401B0 /* WBooksColors.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WBooksColors.swift; sourceTree = "<group>"; };
-		65D692F3264467EF00223F0E /* PrimaryButtonStyleTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PrimaryButtonStyleTests.swift; sourceTree = "<group>"; };
 		65DBD13126459036001BF8A0 /* RemoteImage.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RemoteImage.swift; sourceTree = "<group>"; };
 		65DBD1352645C319001BF8A0 /* LibraryViewTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewTests.swift; sourceTree = "<group>"; };
 		65DBD1382645C427001BF8A0 /* LibraryRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryRepository.swift; sourceTree = "<group>"; };
@@ -229,6 +233,7 @@
 		651364D0264B3899001D5971 /* AddNew */ = {
 			isa = PBXGroup;
 			children = (
+				6567C98B265578F000AE1A95 /* GenreView */,
 				651364D1264B38A9001D5971 /* AddNewViewTests.swift */,
 			);
 			path = AddNew;
@@ -414,6 +419,23 @@
 			path = Modifiers;
 			sourceTree = "<group>";
 		};
+		6567C98B265578F000AE1A95 /* GenreView */ = {
+			isa = PBXGroup;
+			children = (
+				6567C98C2655790000AE1A95 /* GenreViewTests.swift */,
+			);
+			path = GenreView;
+			sourceTree = "<group>";
+		};
+		6567C98F26557AAF00AE1A95 /* Buttons */ = {
+			isa = PBXGroup;
+			children = (
+				6567C99026557ABC00AE1A95 /* HollowButtonTests.swift */,
+				6567C99226557ACA00AE1A95 /* GradientButtonTests.swift */,
+			);
+			path = Buttons;
+			sourceTree = "<group>";
+		};
 		6596C72B2649BEE600A91604 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -484,7 +506,7 @@
 		65D692F2264467D400223F0E /* Shared */ = {
 			isa = PBXGroup;
 			children = (
-				65D692F3264467EF00223F0E /* PrimaryButtonStyleTests.swift */,
+				6567C98F26557AAF00AE1A95 /* Buttons */,
 			);
 			path = Shared;
 			sourceTree = "<group>";
@@ -929,13 +951,15 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				65D692F4264467EF00223F0E /* PrimaryButtonStyleTests.swift in Sources */,
 				6545880A26447E57003F3A37 /* MainViewTests.swift in Sources */,
+				6567C99326557ACA00AE1A95 /* GradientButtonTests.swift in Sources */,
 				651498E92648A59A0024C8FA /* CommentViewTests.swift in Sources */,
+				6567C99126557ABC00AE1A95 /* HollowButtonTests.swift in Sources */,
 				651498E72648A5890024C8FA /* CommentCellTests.swift in Sources */,
 				65CBBE2D26445776007E6B72 /* TestConstants.swift in Sources */,
 				651364D2264B38A9001D5971 /* AddNewViewTests.swift in Sources */,
 				65DBD1362645C319001BF8A0 /* LibraryViewTests.swift in Sources */,
+				6567C98D2655790000AE1A95 /* GenreViewTests.swift in Sources */,
 				65D2267C2645E5EC003401B0 /* LibraryCellTests.swift in Sources */,
 				65F777D0264450D10015A334 /* LoginViewTests.swift in Sources */,
 				65449F36264A5C4A001A6C45 /* RentViewTests.swift in Sources */,

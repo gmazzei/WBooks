@@ -1,8 +1,8 @@
 //
-//  PrimaryButtonStyleTests.swift
+//  GenreViewTests.swift
 //  WBooksTests
 //
-//  Created by Gabriel Mazzei on 06/05/2021.
+//  Created by Gabriel Mazzei on 19/05/2021.
 //
 
 @testable import WBooks
@@ -10,28 +10,21 @@ import XCTest
 import SnapshotTesting
 import SwiftUI
 
-final class PrimaryButtonStyleTests: XCTestCase {
+final class GenreViewTests: XCTestCase {
     
     override func setUp() {
         super.setUp()
         isRecording = false
     }
     
-    func testButtonStyle() {
-        let view = VStack {
-            Button("Example", action: {
-                // No-op
-            })
-            .buttonStyle(PrimaryButtonStyle())
-        }
-        .frame(maxWidth: .infinity, maxHeight: .infinity)
-        .background(Color.blue)
-        
+    func testGenreView() {
+        let repository = AddNewRepositoryStub()
+        let viewModel = AddNewViewModel(repository: repository)
+        let view = GenreView(viewModel: viewModel)
         let controller = UIHostingController(rootView: view)
         
         TestConstants.configurations.forEach { config in
             assertSnapshot(matching: controller, as: .image(on: config.device), named: config.name)
         }
     }
-    
 }

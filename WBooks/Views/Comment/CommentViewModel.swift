@@ -16,13 +16,11 @@ final class CommentViewModel: ObservableObject, CommentRepositoryTypeDelegate {
     private let book: Book
     private var repository: CommentRepositoryType
     @Published private var comments: [Comment]
-    @Published var showProgressView: Bool
     
     // MARK: - Initializers
     
     init(book: Book, repository: CommentRepositoryType = CommentRepository()) {
         self.comments = []
-        self.showProgressView = false
         self.book = book
         self.repository = repository
         self.repository.delegate = self
@@ -31,7 +29,6 @@ final class CommentViewModel: ObservableObject, CommentRepositoryTypeDelegate {
     // MARK: - Public interface
     
     func fetchComments() {
-        self.showProgressView = true
         self.repository.fetchComments(for: book)
     }
     
@@ -45,6 +42,5 @@ final class CommentViewModel: ObservableObject, CommentRepositoryTypeDelegate {
     
     func didFetchComments(comments: [Comment]) {
         self.comments = comments
-        self.showProgressView = false
     }
 }

@@ -27,7 +27,6 @@ struct CommentView: View {
                 CommentCell(viewModel: cellModel)
             }
         }
-        .modifier(ProgressViewModifier(show: viewModel.showProgressView))
         .cornerRadius(Constants.containerCornerRadius)
         .shadow(radius: Constants.containerShadow)
         .onAppear(perform: onLoad)

@@ -53,6 +53,8 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
         setupPublishers()
     }
     
+    // MARK: - Validation
+    
     private func setupPublishers() {
         let isImageValidPublisher = $image
             .dropFirst()
@@ -113,6 +115,11 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
             .store(in: &cancellableSet)
     }
     
+    private func cancelPublishers() {
+        cancellableSet.forEach { $0.cancel() }
+        cancellableSet.removeAll()
+    }
+    
     // MARK: - Public interface
     
     func submit() {
@@ -137,11 +144,6 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
         year = ""
         genre = .educational
         submitEnabled = false
-    }
-    
-    private func cancelPublishers() {
-        cancellableSet.forEach { $0.cancel() }
-        cancellableSet.removeAll()
     }
     
     // MARK: - AddNewRepositoryTypeDelegate

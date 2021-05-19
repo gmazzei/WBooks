@@ -22,6 +22,7 @@
 "BookDetailView.button.title.available" = "Rent";
 "BookDetailView.button.title.unavailable" = "Unavailable";
 "BookDetailView.button.title.inYourHands" = "In Your Hands";
+"BookDetailView.button.title.undefined" = "Loading";
 
 // AddNewView
 "AddNewView.navigationView.title" = "Add New";

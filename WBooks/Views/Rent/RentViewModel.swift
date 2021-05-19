@@ -16,7 +16,7 @@ final class RentViewModel: ObservableObject, RentRepositoryTypeDelegate {
     init(book: Book, repository: RentRepositoryType = RentRepository()) {
         self.repository = repository
         self.book = book
-        self.status = .unavailable
+        self.status = .undefined
         self.repository.delegate = self
     }
     
@@ -42,6 +42,8 @@ final class RentViewModel: ObservableObject, RentRepositoryTypeDelegate {
             return "BookDetailView.button.title.unavailable"
         case .inYourHands:
             return "BookDetailView.button.title.inYourHands"
+        case .undefined:
+            return "BookDetailView.button.title.undefined"
         }
     }
     

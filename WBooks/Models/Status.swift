@@ -11,4 +11,5 @@ enum Status {
     case available
     case unavailable
     case inYourHands
+    case undefined
 }

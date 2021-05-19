@@ -31,6 +31,8 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
     @Published var authorMessage: LocalizedStringKey
     @Published var yearMessage: LocalizedStringKey
     
+    @Published var showProgressView: Bool
+    
     // MARK: - Initializer
     
     init(repository: AddNewRepositoryType = AddNewRepository()) {
@@ -46,6 +48,7 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
         self.titleMessage = ""
         self.authorMessage = ""
         self.yearMessage = ""
+        self.showProgressView = false
         self.repository.delegate = self
         setupPublishers()
     }
@@ -113,6 +116,8 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
     // MARK: - Public interface
     
     func submit() {
+        showProgressView = true
+        
         DispatchQueue.global(qos: .background).async { [weak self] in
             guard let self = self else { return }
             let unidentifiedBook = UnidentifiedBook(title: self.title, author: self.author, image: self.image.encode(),
@@ -131,6 +136,7 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
         author = ""
         year = ""
         genre = .educational
+        submitEnabled = false
     }
     
     private func cancelPublishers() {
@@ -144,5 +150,6 @@ final class AddNewViewModel: ObservableObject, AddNewRepositoryTypeDelegate {
         clearFields()
         cancelPublishers()
         setupPublishers()
+        showProgressView = false
     }
 }

@@ -55,6 +55,7 @@ struct LoginView: View {
                 .aspectRatio(contentMode: .fill)
                 .edgesIgnoringSafeArea(.all)
         )
+        .modifier(ProgressViewModifier(show: viewModel.showProgressView))
     }
 }
 

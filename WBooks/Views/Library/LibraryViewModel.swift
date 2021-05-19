@@ -11,12 +11,13 @@ final class LibraryViewModel: ObservableObject, LibraryRepositoryTypeDelegate {
     
     private var repository: LibraryRepositoryType
     @Published private var books: [Book]
-    
+    @Published var showProgressView: Bool
     
     // MARK: - Initializers
     
     init(repository: LibraryRepositoryType = LibraryRepository()) {
         self.books = []
+        self.showProgressView = false
         self.repository = repository
         self.repository.delegate = self
     }
@@ -24,6 +25,7 @@ final class LibraryViewModel: ObservableObject, LibraryRepositoryTypeDelegate {
     // MARK: - Public interface
     
     func fetchBooks() {
+        self.showProgressView = true
         self.repository.fetchBooks()
     }
     
@@ -35,5 +37,6 @@ final class LibraryViewModel: ObservableObject, LibraryRepositoryTypeDelegate {
     
     func didFetchBooks(books: [Book]) {
         self.books = books
+        self.showProgressView = false
     }
 }

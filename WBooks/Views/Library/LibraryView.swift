@@ -62,6 +62,7 @@ private struct LibraryList: View {
                     .frame(height: LibraryCell.height)
             }
         }
+        .modifier(ProgressViewModifier(show: viewModel.showProgressView))
         .onAppear(perform: onLoad)
     }
     

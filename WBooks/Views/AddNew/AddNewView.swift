@@ -121,7 +121,7 @@ struct AddNewView: View {
             .padding(.top, 40)
             .padding(.bottom, 20)
         }
-        
+        .modifier(ProgressViewModifier(show: viewModel.showProgressView))
         .sheet(isPresented: $showImagePicker) {
             ImagePicker(image: $viewModel.image)
         }

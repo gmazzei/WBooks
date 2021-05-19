@@ -44,6 +44,7 @@
 		656184922644D0B500EEB3EB /* LibraryViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656184912644D0B500EEB3EB /* LibraryViewModel.swift */; };
 		656184952644D25700EEB3EB /* LibraryCellViewModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656184942644D25700EEB3EB /* LibraryCellViewModel.swift */; };
 		656184972644D2BB00EEB3EB /* LibraryCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 656184962644D2BB00EEB3EB /* LibraryCell.swift */; };
+		6567C98A2655672D00AE1A95 /* ProgressViewModifier.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6567C9892655672D00AE1A95 /* ProgressViewModifier.swift */; };
 		6596C72D2649BEEF00A91604 /* API.swift in Sources */ = {isa = PBXBuildFile; fileRef = 6596C72C2649BEEF00A91604 /* API.swift */; };
 		659DEA3E2649F58900781680 /* GradientButton.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DEA3D2649F58900781680 /* GradientButton.swift */; };
 		659DEA40264A0A6D00781680 /* RentRepository.swift in Sources */ = {isa = PBXBuildFile; fileRef = 659DEA3F264A0A6D00781680 /* RentRepository.swift */; };
@@ -135,6 +136,7 @@
 		656184912644D0B500EEB3EB /* LibraryViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryViewModel.swift; sourceTree = "<group>"; };
 		656184942644D25700EEB3EB /* LibraryCellViewModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCellViewModel.swift; sourceTree = "<group>"; };
 		656184962644D2BB00EEB3EB /* LibraryCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LibraryCell.swift; sourceTree = "<group>"; };
+		6567C9892655672D00AE1A95 /* ProgressViewModifier.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ProgressViewModifier.swift; sourceTree = "<group>"; };
 		6596C72C2649BEEF00A91604 /* API.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = API.swift; sourceTree = "<group>"; };
 		659DEA3D2649F58900781680 /* GradientButton.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GradientButton.swift; sourceTree = "<group>"; };
 		659DEA3F264A0A6D00781680 /* RentRepository.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RentRepository.swift; sourceTree = "<group>"; };
@@ -404,6 +406,14 @@
 			path = LibraryCell;
 			sourceTree = "<group>";
 		};
+		6567C9882655670D00AE1A95 /* Modifiers */ = {
+			isa = PBXGroup;
+			children = (
+				6567C9892655672D00AE1A95 /* ProgressViewModifier.swift */,
+			);
+			path = Modifiers;
+			sourceTree = "<group>";
+		};
 		6596C72B2649BEE600A91604 /* API */ = {
 			isa = PBXGroup;
 			children = (
@@ -545,6 +555,7 @@
 				651364CD264B2FCE001D5971 /* Extensions */,
 				65DBD1372645C40F001BF8A0 /* Repositories */,
 				6561848C2644CF7E00EEB3EB /* Views */,
+				6567C9882655670D00AE1A95 /* Modifiers */,
 				6561848B2644CF6900EEB3EB /* Models */,
 				65F777C9264450080015A334 /* Shared */,
 				65F777BA2644323F0015A334 /* Constants */,
@@ -870,6 +881,7 @@
 				65C54AAC2648F6AB004C357C /* BookView.swift in Sources */,
 				651364CC264B217E001D5971 /* UnidentifiedBook.swift in Sources */,
 				65449F31264A4F9A001A6C45 /* RentViewModel.swift in Sources */,
+				6567C98A2655672D00AE1A95 /* ProgressViewModifier.swift in Sources */,
 				6545880726447C92003F3A37 /* AddNewView.swift in Sources */,
 				651364CF264B2FDD001D5971 /* UIImage+Encode.swift in Sources */,
 				655EE309264ADD1500711AEE /* Status.swift in Sources */,

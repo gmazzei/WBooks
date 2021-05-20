@@ -1,6 +1,6 @@
-# What's this?
+# WBooks
 
-This a PoC developed with SwiftUI and MVVM architecture pattern. The app is inspired on WBooks, Wolox's training app.
+This a PoC developed with [SwiftUI](https://developer.apple.com/documentation/swiftui/) and MVVM architecture pattern. The app is inspired on WBooks, Wolox's training app.
 
 ## What can I find here?
 

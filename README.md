@@ -30,6 +30,23 @@ Here you'll find examples of:
 * Validation using [Combine framework](https://developer.apple.com/documentation/combine).
 * Testing with [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing).
 
+## Setup
+
+### Requirements
+
+* Xcode 12.5 or higher.
+* CocoaPods.
+
+### Installation steps
+
+From the root directory, run:
+
+```
+pods install
+```
+
+Once finished, open `WBooks.xcworkspace` with Xcode.
+
 ## API
 
 The app uses a fake API located in [API.swift](WBooks/API/API.swift).

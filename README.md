@@ -14,13 +14,14 @@ Here you'll find examples of:
    * Buttons
    * Pickers
    * Stack Views
-   * Navigation Views.
+   * Progress Views
+   * Navigation Views
    * Navigation Links
-   * Navigation Bar Styling.
-   * Status Bar Styling.
-   * Tab Bars.
-   * Sheet presentation.
-   * Fullscreen presentation.
+   * Navigation Bar Styling
+   * Status Bar Styling
+   * Tab Bars
+   * Sheet presentation
+   * Fullscreen presentation
 * Remote image loading.
 * Reusable components.
 * View Modifiers.

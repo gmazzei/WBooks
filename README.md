@@ -7,11 +7,18 @@ This a PoC developed with SwiftUI and MVVM architecture pattern. The app is insp
 Here you'll find examples of:
 
 * Views:
-   * Lists
-   * Text
    * TextFields
+   * Lists (with LazyVStacks)
+   * Text
    * ScrollViews
    * Buttons
+   * Pickers
+   * StackViews
+   * NavigationViews.
+   * NavigationLinks
+   * TabBars.
+   * Sheet presentation.
+   * Fullscreen presentation.
 * Remote image loading.
 * Reusable components.
 * ViewModifiers.

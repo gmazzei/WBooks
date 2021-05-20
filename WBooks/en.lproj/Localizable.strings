@@ -7,7 +7,7 @@
 */
 
 // LoginView
-"LoginView.buttonTitle" = "Login with Google";
+"LoginView.buttonTitle" = "Log in with Google";
 "LoginView.bottomText" = "Designed and developed by woloxers";
 
 // MainView

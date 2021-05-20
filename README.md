@@ -10,18 +10,20 @@ Here you'll find examples of:
    * TextFields
    * Lists (with LazyVStacks)
    * Text
-   * ScrollViews
+   * Scroll Views
    * Buttons
    * Pickers
-   * StackViews
-   * NavigationViews.
-   * NavigationLinks
-   * TabBars.
+   * Stack Views
+   * Navigation Views.
+   * Navigation Links
+   * Navigation Bar Styling.
+   * Status Bar Styling.
+   * Tab Bars.
    * Sheet presentation.
    * Fullscreen presentation.
 * Remote image loading.
 * Reusable components.
-* ViewModifiers.
+* View Modifiers.
 * Validation using [Combine framework](https://developer.apple.com/documentation/combine).
 * Testing with [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing).
 

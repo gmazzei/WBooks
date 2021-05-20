@@ -23,10 +23,16 @@ Here you'll find examples of:
    * Sheet presentation
    * Fullscreen presentation
 * Remote image loading.
+* Image picking from the gallery.
 * Reusable components.
 * View Modifiers.
+* Localized strings.
 * Validation using [Combine framework](https://developer.apple.com/documentation/combine).
 * Testing with [SnapshotTesting](https://github.com/pointfreeco/swift-snapshot-testing).
+
+## API
+
+The app uses a fake API located in [API.swift](WBooks/API/API.swift).
 
 ## Screenshots
 

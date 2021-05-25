@@ -9,7 +9,6 @@ import SwiftUI
 
 struct GenreView: View {
     
-    
     @Environment(\.presentationMode) var presentationMode
     @ObservedObject private var viewModel: AddNewViewModel
     

@@ -22,8 +22,7 @@ struct BookView: View {
         static let rowSpacing: CGFloat = 20
         static let containerCornerRadius: CGFloat = 10
         static let containerShadow: CGFloat = 0.3
-        static let containerPadding: EdgeInsets = EdgeInsets(top: 16, leading: 16,
-                                                             bottom: 16, trailing: 16)
+        static let containerPadding: CGFloat = 16
     }
         
     private let viewModel: BookViewModel

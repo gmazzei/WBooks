@@ -20,29 +20,33 @@ final class API {
     
     private init() {
         self.books = [
-            Book(id: UUID(), title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
-            Book(id: UUID(), title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
-            Book(id: UUID(), title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
-            Book(id: UUID(), title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
-            Book(id: UUID(), title: "Jane Eyre", author: "Charlotte Bronte", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
+            Book(id: UUID(), title: "Jane Eyre", author: "Charlotte Brontë", image: "https://images.booksense.com/images/499/282/9781788282499.jpg", year: 1847, genre: .novel),
+            Book(id: UUID(), title: "The Hobbit", author: "J.R.R Tolkien", image: "https://i.harperapps.com/hcanz/covers/9780261102217/x293.jpg", year: 1937, genre: .novel),
+            Book(id: UUID(), title: "Wuthering Heights", author: "Emily Brontë", image: "https://images-na.ssl-images-amazon.com/images/I/71ogwlE3YNL.jpg", year: 1847, genre: .novel),
+            Book(id: UUID(), title: "The Martian Chronicles", author: "Ray Bradbury", image: "https://cdn.waterstones.com/bookjackets/large/9780/0064/9780006479239.jpg", year: 1950, genre: .novel),
+            Book(id: UUID(), title: "El Coronel No Tiene Quien Le Escriba", author: "Gabriel García Márquez", image: "https://images-na.ssl-images-amazon.com/images/I/71MB0yX7mlL.jpg", year: 1847, genre: .novel),
         ]
         
         self.users = [
             User(username: "John Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
-            User(username: "Jane Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
-            User(username: "Pepe Smith", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
+            User(username: "Pepe Andersen", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
+            User(username: "Rudolph McKenzie", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
+            User(username: "Mario Santos", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
+            User(username: "Jamie Jefferson", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
+            User(username: "Jane Williams", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
+            User(username: "Olivia Johansen", image: "https://images.booksense.com/images/499/282/9781788282499.jpg"),
             testUser
         ]
         
         self.comments = [
             Comment(user: users[0], book: books[2], content: "Nice book!"),
-            Comment(user: users[1], book: books[1], content: "Nice book!"),
-            Comment(user: users[2], book: books[0], content: "Nice book!"),
-            Comment(user: users[0], book: books[2], content: "Nice book!"),
-            Comment(user: users[1], book: books[1], content: "Nice book!"),
-            Comment(user: users[2], book: books[0], content: "Nice book!"),
-            Comment(user: users[0], book: books[2], content: "Nice book!"),
-            Comment(user: users[1], book: books[1], content: "Nice book!"),
+            Comment(user: users[1], book: books[1], content: "Awesome!"),
+            Comment(user: users[2], book: books[0], content: "Cool!"),
+            Comment(user: users[0], book: books[2], content: "I recommend it!"),
+            Comment(user: users[1], book: books[1], content: "Nicee"),
+            Comment(user: users[2], book: books[0], content: "One of the best I have ever read"),
+            Comment(user: users[0], book: books[2], content: "Awesome indeed"),
+            Comment(user: users[1], book: books[1], content: "Nice book! I definitely recommend it"),
         ]
         
         self.rents = [

@@ -52,7 +52,7 @@ struct BookView: View {
                         .fontWeight(.bold)
                         .font(.title)
                         .fixedSize(horizontal: false, vertical: true)
-                        .lineLimit(2)
+                        .lineLimit(1)
                     
                     Text(viewModel.author)
                         .foregroundColor(Constants.secondaryTextColor)
